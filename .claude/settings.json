@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npx agentation-mcp:*)",
+      "Bash(printf \"Y\\\\n4747\\\\n\")",
+      "Read(//c/Users/babar/**)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\babar"
+    ]
+  }
+}
