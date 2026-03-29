@@ -1,12 +1,12 @@
 import Image from "next/image";
-import HeroSelector from "@/components/HeroSelector";
+import Hero from "@/components/Hero";
 import ScrollToTop from "@/components/ScrollToTop";
 import CopyButton from "@/components/CopyButton";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#FAF7F2]">
-      <HeroSelector />
+      <Hero />
 
       <main className="container mx-auto px-6 py-16 max-w-5xl">
 

@@ -4,12 +4,7 @@ import MobileMenu from "./MobileMenu";
 import DesktopDropdown from "./DesktopDropdown";
 import RussianOrthodoxCross from "./RussianOrthodoxCross";
 
-interface Props {
-  selected: 1 | 2;
-  setSelected: (v: 1 | 2) => void;
-}
-
-export default function HeroVariant1({ selected, setSelected }: Props) {
+export default function Hero() {
   return (
     <>
       {/* Top Navigation */}
@@ -94,10 +89,6 @@ export default function HeroVariant1({ selected, setSelected }: Props) {
           <Image src="/monastery-1.svg" alt="Манастир Кувеждин" fill className="object-cover" priority />
           <div className="absolute bottom-0 left-0 right-0 px-6 py-5 bg-gradient-to-t from-[#140404]/80 to-transparent">
             <p className="text-xs text-[#F5EDD8] tracking-[0.15em] uppercase">Манастир Кувеждин · Фрушка Гора</p>
-          </div>
-          <div className="absolute bottom-6 right-6 flex gap-2 z-20">
-            <button onClick={() => setSelected(1)} className={`px-4 py-2 text-xs font-medium rounded transition-all ${selected === 1 ? "bg-[#6B1A1A] text-[#F5EDD8]" : "bg-white/90 text-[#6B1A1A] border border-[#6B1A1A]/20 hover:bg-white"}`}>Варијанта 1</button>
-            <button onClick={() => setSelected(2)} className={`px-4 py-2 text-xs font-medium rounded transition-all ${selected === 2 ? "bg-[#6B1A1A] text-[#F5EDD8]" : "bg-white/90 text-[#6B1A1A] border border-[#6B1A1A]/20 hover:bg-white"}`}>Варијанта 2</button>
           </div>
         </div>
       </section>
