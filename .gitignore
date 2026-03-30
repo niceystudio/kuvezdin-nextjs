@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# large files in documents
+documents/copy/9. ПРЕУЗИМАЊА/4. ЗАКОН БОЖИЈИ.pdf
