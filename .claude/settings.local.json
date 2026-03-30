@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/Nicey/Documents/copy/**)",
+      "Bash(python3 -c \":*)",
+      "Bash(npx next:*)"
+    ]
+  }
+}

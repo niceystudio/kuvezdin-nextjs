@@ -244,7 +244,7 @@ export default function Home() {
           <div className="bg-[#FBF7EE] border border-[#6B1A1A]/10 p-4 md:p-6">
             <div className="aspect-[16/9] w-full">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1d2814.962073961971!2d19.508446526609937!3d45.127104305866624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475b9fa9114988d3%3A0x238344dbb02868b1!2sManastir%20Kuve%C5%BEdin!5e0!3m2!1sen!2srs!4v1774609655930!5m2!1sen!2srs"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2814.962073961971!2d19.508446526609937!3d45.127104305866624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475b9fa9114988d3%3A0x238344dbb02868b1!2sManastir%20Kuve%C5%BEdin!5e0!3m2!1sen!2srs!4v1774789871541!5m2!1sen!2srs"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
