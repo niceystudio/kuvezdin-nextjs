@@ -219,7 +219,7 @@ export default function Home() {
               { src: "/monastery-2.svg", alt: "Перспектива манастира", label: "ПЕРСПЕКТИВА" },
               { src: "/monastery-3.svg", alt: "Детаљи манастира", label: "ДЕТАЉИ" },
             ].map((img) => (
-              <a key={img.label} href="#galerija" className="relative aspect-[4/3] group overflow-hidden block">
+              <a key={img.label} href="/galerija" className="relative aspect-[4/3] group overflow-hidden block">
                 <Image src={img.src} alt={img.alt} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -229,7 +229,7 @@ export default function Home() {
             ))}
           </div>
           <div className="flex justify-center">
-            <a href="#galerija" className="px-8 py-3 bg-[#C9A84C] text-[#1A1209] text-xs tracking-[0.15em] uppercase font-medium hover:bg-[#E8C96A] transition-colors">
+            <a href="/galerija" className="px-8 py-3 bg-[#C9A84C] text-[#1A1209] text-xs tracking-[0.15em] uppercase font-medium hover:bg-[#E8C96A] transition-colors">
               ПОГЛЕДАЈ СВЕ ФОТОГРАФИЈЕ
             </a>
           </div>

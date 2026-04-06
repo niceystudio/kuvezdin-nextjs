@@ -62,8 +62,8 @@ export default function MobileMenu() {
                 { href: "/ispovest", label: "О исповести" },
                 { href: "/psaltir", label: "О псалтиру" },
                 { href: "/istorijat", label: "Историјат" },
-                { href: "#galerija", label: "Галерија" },
-                { href: "#zakon", label: "Закон Божији" },
+                { href: "/galerija", label: "Галерија" },
+                { href: "/zakon-boziji", label: "Закон Божији" },
               ].map((item) => (
                 <a
                   key={item.href}
@@ -120,7 +120,7 @@ export default function MobileMenu() {
               </div>
 
               <a
-                href="#zaduzbinastvo"
+                href="/zaduzbinarstvo"
                 className="mt-4 block bg-[#C9A84C] px-4 py-3 text-center text-sm font-medium tracking-wider text-[#1A1209] uppercase transition-colors hover:bg-[#E8C96A]"
                 onClick={() => setOpen(false)}
               >

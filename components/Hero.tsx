@@ -34,8 +34,8 @@ export default function Hero() {
                 { href: "/ispovest", label: "О исповести" },
                 { href: "/psaltir", label: "О псалтиру" },
                 { href: "/istorijat", label: "Историјат" },
-                { href: "#galerija", label: "Галерија" },
-                { href: "#zakon", label: "Закон Божији" },
+                { href: "/galerija", label: "Галерија" },
+                { href: "/zakon-boziji", label: "Закон Божији" },
               ].map((item, i) => (
                 <span key={item.href} className="flex items-center gap-4">
                   {i > 0 && <div className="h-3 w-px bg-[#C9A84C]/30" />}
@@ -51,7 +51,7 @@ export default function Hero() {
               <DesktopDropdown variant="dark" />
               <div className="h-3 w-px bg-[#C9A84C]/30" />
               <a
-                href="#zaduzbinastvo"
+                href="/zaduzbinarstvo"
                 className="ml-2 bg-[#C9A84C] px-5 py-2 text-xs tracking-wider text-[#1A1209] uppercase transition-colors hover:bg-[#E8C96A]"
               >
                 Задужбинарство
