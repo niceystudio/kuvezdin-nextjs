@@ -33,7 +33,7 @@ export default function Hero() {
                 { href: "#pocetna", label: "Почетна" },
                 { href: "/ispovest", label: "О исповести" },
                 { href: "/psaltir", label: "О псалтиру" },
-                { href: "#istorijat", label: "Историјат" },
+                { href: "/istorijat", label: "Историјат" },
                 { href: "#galerija", label: "Галерија" },
                 { href: "#zakon", label: "Закон Божији" },
               ].map((item, i) => (
@@ -108,7 +108,7 @@ export default function Hero() {
                 Контакт
               </a>
               <a
-                href="#istorijat"
+                href="/istorijat"
                 className="border border-[#6B1A1A] bg-transparent px-6 py-3 text-sm tracking-wider text-[#6B1A1A] uppercase transition-colors hover:bg-[#6B1A1A]/5"
               >
                 Историјат

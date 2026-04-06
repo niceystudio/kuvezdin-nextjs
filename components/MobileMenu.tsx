@@ -61,7 +61,7 @@ export default function MobileMenu() {
                 { href: "#pocetna", label: "Почетна" },
                 { href: "/ispovest", label: "О исповести" },
                 { href: "/psaltir", label: "О псалтиру" },
-                { href: "#istorijat", label: "Историјат" },
+                { href: "/istorijat", label: "Историјат" },
                 { href: "#galerija", label: "Галерија" },
                 { href: "#zakon", label: "Закон Божији" },
               ].map((item) => (

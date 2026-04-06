@@ -30,7 +30,7 @@ export default function IspovesPage() {
                 { href: "/", label: "Почетна" },
                 { href: "/ispovest", label: "О исповести" },
                 { href: "/psaltir", label: "О псалтиру" },
-                { href: "/#istorijat", label: "Историјат" },
+                { href: "/istorijat", label: "Историјат" },
                 { href: "/#galerija", label: "Галерија" },
                 { href: "/#zakon", label: "Закон Божији" },
               ].map((item, i) => (
@@ -357,7 +357,7 @@ export default function IspovesPage() {
               {[
                 { label: "О исповести", href: "/ispovest" },
                 { label: "О псалтиру", href: "/psaltir" },
-                { label: "Историјат", href: "/#istorijat" },
+                { label: "Историјат", href: "/istorijat" },
                 { label: "Галерија", href: "/#galerija" },
                 { label: "Закон Божији", href: "/#zakon" },
                 { label: "Задужбинарство", href: "/#zaduzbinastvo" },
