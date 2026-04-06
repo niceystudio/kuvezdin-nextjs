@@ -35,30 +35,24 @@ export default function GalleryBrowser({ sections }: GalleryBrowserProps) {
   const currentIndex = selectedIndex ?? 0;
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    const handleScroll = () => {
+      // 160px: sticky nav (80px) + a bit of breathing room
+      const offset = 160;
+      const scrollY = window.scrollY;
 
-        if (visible?.target.id) {
-          setActiveSection(visible.target.id);
+      let current = sections[0]?.id ?? "";
+      for (const section of sections) {
+        const element = document.getElementById(section.id);
+        if (element && element.offsetTop - offset <= scrollY) {
+          current = section.id;
         }
-      },
-      {
-        rootMargin: "-20% 0px -60% 0px",
-        threshold: [0.15, 0.35, 0.6],
-      },
-    );
-
-    sections.forEach((section) => {
-      const element = document.getElementById(section.id);
-      if (element) {
-        observer.observe(element);
       }
-    });
+      setActiveSection(current);
+    };
 
-    return () => observer.disconnect();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [sections]);
 
   useEffect(() => {
