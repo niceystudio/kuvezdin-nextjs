@@ -8,36 +8,59 @@ export default function MobileMenu() {
   return (
     <>
       <button
-        className="lg:hidden w-10 h-10 flex items-center justify-center text-[#F5EDD8] hover:text-[#C9A84C] transition-colors"
+        className="flex h-10 w-10 items-center justify-center text-[#F5EDD8] transition-colors hover:text-[#C9A84C] lg:hidden"
         onClick={() => setOpen(true)}
         aria-label="Отвори мени"
       >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M3 12h18M3 6h18M3 18h18"/>
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M3 12h18M3 6h18M3 18h18" />
         </svg>
       </button>
 
       {open && (
         <>
-          <div className="fixed inset-0 bg-black/60 z-50 lg:hidden" onClick={() => setOpen(false)}></div>
-          <div className="fixed top-0 right-0 bottom-0 w-[280px] bg-[#4A0E0E] z-50 lg:hidden shadow-2xl overflow-y-auto">
-            <div className="flex items-center justify-between p-6 border-b border-[#C9A84C]/20">
-              <span className="text-sm text-[#C9A84C] tracking-wider uppercase">Мени</span>
+          <div
+            className="fixed inset-0 z-50 bg-black/60 lg:hidden"
+            onClick={() => setOpen(false)}
+          />
+          <div className="fixed top-0 right-0 bottom-0 z-50 w-[280px] overflow-y-auto bg-[#4A0E0E] shadow-2xl lg:hidden">
+            <div className="flex items-center justify-between border-b border-[#C9A84C]/20 p-6">
+              <span className="text-sm tracking-wider text-[#C9A84C] uppercase">
+                Мени
+              </span>
               <button
-                className="w-8 h-8 flex items-center justify-center text-[#F5EDD8] hover:text-[#C9A84C] transition-colors"
+                className="flex h-8 w-8 items-center justify-center text-[#F5EDD8] transition-colors hover:text-[#C9A84C]"
                 onClick={() => setOpen(false)}
                 aria-label="Затвори мени"
               >
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M15 5L5 15M5 5l10 10"/>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M15 5L5 15M5 5l10 10" />
                 </svg>
               </button>
             </div>
-            <nav className="p-6 space-y-1">
+            <nav className="space-y-1 p-6">
               {[
                 { href: "#pocetna", label: "Почетна" },
-                { href: "#ispovest", label: "О исповести" },
-                { href: "#psaltir", label: "О псалтиру" },
+                { href: "/ispovest", label: "О исповести" },
+                { href: "/psaltir", label: "О псалтиру" },
                 { href: "#istorijat", label: "Историјат" },
                 { href: "#galerija", label: "Галерија" },
                 { href: "#zakon", label: "Закон Божији" },
@@ -45,7 +68,7 @@ export default function MobileMenu() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="block py-3 px-4 text-sm text-white/90 hover:bg-[#C9A84C]/10 hover:text-[#C9A84C] transition-colors tracking-wide uppercase"
+                  className="block px-4 py-3 text-sm tracking-wide text-white/90 uppercase transition-colors hover:bg-[#C9A84C]/10 hover:text-[#C9A84C]"
                   onClick={() => setOpen(false)}
                 >
                   {item.label}
@@ -54,21 +77,43 @@ export default function MobileMenu() {
 
               <div>
                 <button
-                  className="w-full flex items-center justify-between py-3 px-4 text-sm text-white/90 hover:bg-[#C9A84C]/10 hover:text-[#C9A84C] transition-colors tracking-wide uppercase"
+                  className="flex w-full items-center justify-between px-4 py-3 text-sm tracking-wide text-white/90 uppercase transition-colors hover:bg-[#C9A84C]/10 hover:text-[#C9A84C]"
                   onClick={() => setDownloadsOpen(!downloadsOpen)}
                 >
                   Преузимања
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={`transition-transform ${downloadsOpen ? "rotate-180" : ""}`}>
-                    <path d="M3 5L6 8L9 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    className={`transition-transform ${
+                      downloadsOpen ? "rotate-180" : ""
+                    }`}
+                  >
+                    <path
+                      d="M3 5L6 8L9 5"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </button>
                 {downloadsOpen && (
-                  <div className="bg-[#2C0808] ml-4 mt-1 mb-2 rounded-sm overflow-hidden">
-                    <a href="#pomocnik-ispovest" className="block py-2 px-4 text-sm text-white/80 hover:bg-[#C9A84C]/10 hover:text-[#C9A84C] transition-colors" onClick={() => setOpen(false)}>
+                  <div className="mt-1 mb-2 ml-4 overflow-hidden rounded-sm bg-[#2C0808]">
+                    <a
+                      href="/preuzimanja/pomocnik-za-ispovest-mitarstva-blazene-teodore.pdf"
+                      className="block px-4 py-2 text-sm text-white/80 transition-colors hover:bg-[#C9A84C]/10 hover:text-[#C9A84C]"
+                      onClick={() => setOpen(false)}
+                    >
                       Помоћник за исповест
                     </a>
-                    <a href="#uputstvo-psaltir" className="block py-2 px-4 text-sm text-white/80 hover:bg-[#C9A84C]/10 hover:text-[#C9A84C] transition-colors" onClick={() => setOpen(false)}>
-                      Упутство читање псалтира
+                    <a
+                      href="/preuzimanja/uputstvo-za-citanje-psaltira.pdf"
+                      className="block px-4 py-2 text-sm text-white/80 transition-colors hover:bg-[#C9A84C]/10 hover:text-[#C9A84C]"
+                      onClick={() => setOpen(false)}
+                    >
+                      Упутство за читање псалтира
                     </a>
                   </div>
                 )}
@@ -76,7 +121,7 @@ export default function MobileMenu() {
 
               <a
                 href="#zaduzbinastvo"
-                className="block mt-4 py-3 px-4 bg-[#C9A84C] text-[#1A1209] text-sm text-center tracking-wider uppercase hover:bg-[#E8C96A] transition-colors font-medium"
+                className="mt-4 block bg-[#C9A84C] px-4 py-3 text-center text-sm font-medium tracking-wider text-[#1A1209] uppercase transition-colors hover:bg-[#E8C96A]"
                 onClick={() => setOpen(false)}
               >
                 Задужбинарство

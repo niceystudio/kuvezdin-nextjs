@@ -1,4 +1,6 @@
+/* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
+import Link from "next/link";
 import RussianOrthodoxCross from "@/components/RussianOrthodoxCross";
 import ScrollToTop from "@/components/ScrollToTop";
 import MitarstvaAccordion from "./MitarstvaAccordion";
@@ -16,25 +18,25 @@ export default function IspovesPage() {
       <nav className="sticky top-0 z-40 bg-[#4A0E0E] border-b border-[#C9A84C]/20">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between h-20">
-            <a href="/" className="flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-3">
               <Image src="/spc-logo.svg" alt="Српска Православна Црква" width={56} height={56} className="h-14 w-auto object-contain" />
               <div className="border-l border-[#C9A84C]/30 pl-3 py-2">
                 <p className="text-xs text-[#F5EDD8] tracking-[0.15em] uppercase leading-tight">Српска Православна Црква</p>
                 <p className="text-[10px] text-[#C9A84C] tracking-wider uppercase mt-0.5">Епархија Сремска</p>
               </div>
-            </a>
+            </Link>
             <div className="hidden lg:flex items-center gap-4">
               {[
                 { href: "/", label: "Почетна" },
                 { href: "/ispovest", label: "О исповести" },
-                { href: "/#psaltir", label: "О псалтиру" },
+                { href: "/psaltir", label: "О псалтиру" },
                 { href: "/#istorijat", label: "Историјат" },
                 { href: "/#galerija", label: "Галерија" },
                 { href: "/#zakon", label: "Закон Божији" },
               ].map((item, i) => (
                 <span key={item.href} className="flex items-center gap-4">
                   {i > 0 && <div className="h-3 w-px bg-[#C9A84C]/30"></div>}
-                  <a
+                  <Link
                     href={item.href}
                     className={`text-sm tracking-wide uppercase transition-colors ${
                       item.href === "/ispovest"
@@ -43,20 +45,20 @@ export default function IspovesPage() {
                     }`}
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </span>
               ))}
               <div className="h-3 w-px bg-[#C9A84C]/30"></div>
-              <a
+              <Link
                 href="/#zaduzbinastvo"
                 className="ml-2 px-5 py-2 bg-[#C9A84C] text-[#1A1209] text-xs tracking-wider uppercase hover:bg-[#E8C96A] transition-colors font-medium"
               >
                 Задужбинарство
-              </a>
+              </Link>
             </div>
-            <a href="/" className="lg:hidden text-[#F5EDD8]/70 hover:text-[#C9A84C] text-sm tracking-wide transition-colors">
+            <Link href="/" className="lg:hidden text-[#F5EDD8]/70 hover:text-[#C9A84C] text-sm tracking-wide transition-colors">
               Почетна
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
@@ -332,10 +334,11 @@ export default function IspovesPage() {
               Браћо и сестре исповедајте се код својих парохијских свештеника
             </p>
             <a
-              href="/#raspored"
+              href="/preuzimanja/pomocnik-za-ispovest-mitarstva-blazene-teodore.pdf"
+              download
               className="inline-block px-8 py-3 bg-[#C9A84C] text-[#1A1209] text-xs tracking-[0.15em] uppercase hover:bg-[#E8C96A] transition-colors font-medium"
             >
-              Распоред богослужења
+              Преузми помоћник за исповест
             </a>
           </div>
         </section>
@@ -353,7 +356,7 @@ export default function IspovesPage() {
             <nav className="flex flex-wrap gap-x-6 gap-y-1">
               {[
                 { label: "О исповести", href: "/ispovest" },
-                { label: "О псалтиру", href: "/#psaltir" },
+                { label: "О псалтиру", href: "/psaltir" },
                 { label: "Историјат", href: "/#istorijat" },
                 { label: "Галерија", href: "/#galerija" },
                 { label: "Закон Божији", href: "/#zakon" },
