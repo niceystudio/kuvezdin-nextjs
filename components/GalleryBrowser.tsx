@@ -88,7 +88,7 @@ export default function GalleryBrowser({ sections }: GalleryBrowserProps) {
   return (
     <>
       <div className="grid gap-10 lg:grid-cols-[260px_minmax(0,1fr)]">
-        <aside className="lg:sticky lg:top-28 lg:self-start">
+        <aside className="hidden lg:block lg:sticky lg:top-28 lg:self-start">
           <div className="border-l border-[#C9A84C]/30 pl-5">
             <p className="text-[10px] tracking-[0.24em] text-[#8D6A2B] uppercase">
               Раздобља

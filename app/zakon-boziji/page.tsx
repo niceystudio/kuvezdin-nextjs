@@ -1,11 +1,10 @@
-import Image from "next/image";
-import Link from "next/link";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import HistoryImageGroup from "@/components/HistoryImageGroup";
 import SiteNav from "@/components/SiteNav";
 import RussianOrthodoxCross from "@/components/RussianOrthodoxCross";
 import ScrollToTop from "@/components/ScrollToTop";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Закон Божији | Манастир Кувеждин",
@@ -15,19 +14,17 @@ export const metadata = {
 type ContentBlock =
   | { type: "heading"; text: string }
   | { type: "paragraph"; text: string }
-  | { type: "list"; items: string[] };
+  | { type: "list"; items: string[] }
+  | { type: "blockquote"; text: string };
 
-function decodeXml(value: string) {
-  return value
-    .replace(/&quot;/g, '"')
-    .replace(/&apos;/g, "'")
-    .replace(/&gt;/g, ">")
-    .replace(/&lt;/g, "<")
-    .replace(/&amp;/g, "&");
+function stripInline(text: string) {
+  return text
+    .replace(/\*\*(.*?)\*\*/g, "$1")
+    .replace(/\*(.*?)\*/g, "$1")
+    .replace(/\\(.)/g, "$1");
 }
 
-function parseDocxContent(xml: string): ContentBlock[] {
-  const paragraphMatches = xml.match(/<w:p\b[\s\S]*?<\/w:p>/g) ?? [];
+function parseMdContent(md: string): ContentBlock[] {
   const blocks: ContentBlock[] = [];
   let pendingList: string[] = [];
 
@@ -38,55 +35,56 @@ function parseDocxContent(xml: string): ContentBlock[] {
     }
   };
 
-  for (const paragraphXml of paragraphMatches) {
-    const texts = [...paragraphXml.matchAll(/<w:t(?:\s+[^>]*)?>([\s\S]*?)<\/w:t>/g)]
-      .map((match) => decodeXml(match[1]))
-      .join("")
-      .replace(/\u00A0/g, " ")
-      .trim();
+  for (const raw of md.split("\n")) {
+    const line = raw.trim();
 
-    if (!texts) {
+    if (!line) {
       flushList();
       continue;
     }
 
-    const isListItem = /<w:numPr>[\s\S]*?<\/w:numPr>/.test(paragraphXml);
-    const isCentered = /<w:jc[^>]*w:val="center"/.test(paragraphXml);
-    const styleMatch = paragraphXml.match(/<w:pStyle[^>]*w:val="([^"]+)"/);
-    const style = styleMatch?.[1] ?? "";
+    if (line.startsWith("#")) {
+      flushList();
+      blocks.push({ type: "heading", text: stripInline(line.replace(/^#+\s*/, "")) });
+      continue;
+    }
 
-    if (isListItem) {
-      pendingList.push(texts);
+    if (line.startsWith("> ")) {
+      flushList();
+      blocks.push({ type: "blockquote", text: stripInline(line.slice(2)) });
+      continue;
+    }
+
+    const listMatch = line.match(/^\d+\.\s+(.*)/);
+    if (listMatch) {
+      pendingList.push(stripInline(listMatch[1]));
       continue;
     }
 
     flushList();
 
-    if (style === "Title" || isCentered) {
-      blocks.push({ type: "heading", text: texts });
+    if (/^\*\*[^*]+\*\*$/.test(line)) {
+      blocks.push({ type: "heading", text: stripInline(line) });
       continue;
     }
 
-    blocks.push({ type: "paragraph", text: texts });
+    blocks.push({ type: "paragraph", text: stripInline(line) });
   }
 
   flushList();
-
   return blocks;
 }
 
 async function getContentBlocks() {
-  const xmlPath = join(
+  const mdPath = join(
     process.cwd(),
-    "app",
-    "zakon-boziji",
-    "_source",
-    "docx",
-    "word",
-    "document.xml",
+    "documents",
+    "copy",
+    "6. ЗАКОН БОЖИЈИ",
+    "ЗАКОН БОЖИЈИ sadržaj.md",
   );
-  const xml = await readFile(xmlPath, "utf8");
-  return parseDocxContent(xml);
+  const md = await readFile(mdPath, "utf8");
+  return parseMdContent(md);
 }
 
 const bookPhotos = [
@@ -171,30 +169,13 @@ export default async function ZakonBozijiPage() {
       </section>
 
       <main className="container mx-auto max-w-6xl px-6 py-16">
-        <section className="border-b border-[#6B1A1A]/15 pb-16">
-          <HistoryImageGroup
-            images={bookPhotos.map((photo) => ({
-              ...photo,
-              aspectClassName: "aspect-[4/3]",
-            }))}
-            className="grid gap-4 md:grid-cols-2 xl:grid-cols-3"
-          />
-        </section>
-
         <section className="border-b border-[#6B1A1A]/15 py-16">
           <div className="mb-8 flex items-baseline gap-4">
             <span className="font-serif text-5xl leading-none text-[#C9A84C]/50">
               I
             </span>
-            <h2 className="font-serif text-4xl text-[#6B1A1A]">Садржај</h2>
+            <h2 className="font-serif text-4xl text-[#6B1A1A]">Предговор</h2>
           </div>
-          <HistoryImageGroup
-            images={contentScreens}
-            className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"
-          />
-        </section>
-
-        <section className="py-16">
           <div className="space-y-6">
             {restBlocks.map((block, index) => {
               if (block.type === "heading") {
@@ -205,6 +186,17 @@ export default async function ZakonBozijiPage() {
                   >
                     {block.text}
                   </h2>
+                );
+              }
+
+              if (block.type === "blockquote") {
+                return (
+                  <blockquote
+                    key={`blockquote-${index}`}
+                    className="border-l-4 border-[#C9A84C] bg-[#F5EDD8] px-6 py-5 font-serif text-lg italic leading-relaxed text-[#6B1A1A]"
+                  >
+                    {block.text}
+                  </blockquote>
                 );
               }
 
@@ -233,6 +225,35 @@ export default async function ZakonBozijiPage() {
           </div>
         </section>
 
+        <section className="border-b border-[#6B1A1A]/15 py-16">
+          <div className="mb-8 flex items-baseline gap-4">
+            <span className="font-serif text-5xl leading-none text-[#C9A84C]/50">
+              II
+            </span>
+            <h2 className="font-serif text-4xl text-[#6B1A1A]">Садржај</h2>
+          </div>
+          <HistoryImageGroup
+            images={contentScreens}
+            className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"
+          />
+        </section>
+
+        <section className="border-b border-[#6B1A1A]/15 py-16">
+          <div className="mb-8 flex items-baseline gap-4">
+            <span className="font-serif text-5xl leading-none text-[#C9A84C]/50">
+              III
+            </span>
+            <h2 className="font-serif text-4xl text-[#6B1A1A]">Галерија</h2>
+          </div>
+          <HistoryImageGroup
+            images={bookPhotos.map((photo) => ({
+              ...photo,
+              aspectClassName: "aspect-[4/3]",
+            }))}
+            className="grid gap-4 md:grid-cols-2 xl:grid-cols-3"
+          />
+        </section>
+
         <section className="border border-[#C9A84C]/30 bg-[#FBF7EE] px-8 py-10">
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div>
@@ -255,42 +276,7 @@ export default async function ZakonBozijiPage() {
         </section>
       </main>
 
-      <footer className="border-t border-[#C9A84C]/20 bg-[#2C0808] px-6 py-8">
-        <div className="container mx-auto max-w-5xl">
-          <div className="mb-6 flex flex-wrap items-start justify-between gap-8">
-            <div className="text-[#F5EDD8]">
-              <p className="text-lg font-serif">Манастир Кувеждин</p>
-              <p className="mt-1 text-[10px] tracking-wider text-[#C9A84C] uppercase">
-                Српска Православна Црква · Епархија Сремска
-              </p>
-            </div>
-            <nav className="flex flex-wrap gap-x-6 gap-y-1">
-              {[
-                { label: "О исповести", href: "/ispovest" },
-                { label: "О псалтиру", href: "/psaltir" },
-                { label: "Историјат", href: "/istorijat" },
-                { label: "Галерија", href: "/galerija" },
-                { label: "Закон Божији", href: "/zakon-boziji" },
-                { label: "Задужбинарство", href: "/zaduzbinarstvo" },
-                { label: "Обавештења", href: "/#obavestenja" },
-              ].map(({ label, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  className="text-[11px] text-[#F5EDD8]/55 transition-colors hover:text-[#C9A84C]"
-                >
-                  {label}
-                </a>
-              ))}
-            </nav>
-          </div>
-          <div className="border-t border-[#C9A84C]/10 pt-4 text-center">
-            <p className="text-[10px] tracking-wide text-[#F5EDD8]/30">
-              Манастир Кувеждин · Сремска епархија СПЦ
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
       <ScrollToTop />
     </div>

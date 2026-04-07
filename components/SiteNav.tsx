@@ -30,7 +30,7 @@ export default function SiteNav() {
             {/* Logo */}
             <a href={homeHref} className="flex items-center gap-3">
               <Image
-                src="/spc-logo.svg"
+                src="/Грб_СПЦ.png"
                 alt="Српска Православна Црква"
                 width={56}
                 height={56}

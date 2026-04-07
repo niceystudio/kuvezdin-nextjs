@@ -3,6 +3,7 @@ import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import RussianOrthodoxCross from "@/components/RussianOrthodoxCross";
 import ScrollToTop from "@/components/ScrollToTop";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "О Псалтиру | Манастир Кувеждин",
@@ -229,42 +230,7 @@ export default function PsaltirPage() {
         </section>
       </main>
 
-      <footer className="border-t border-[#C9A84C]/20 bg-[#2C0808] px-6 py-8">
-        <div className="container mx-auto max-w-5xl">
-          <div className="mb-6 flex flex-wrap items-start justify-between gap-8">
-            <div className="text-[#F5EDD8]">
-              <p className="text-lg font-serif">Манастир Кувеждин</p>
-              <p className="mt-1 text-[10px] tracking-wider text-[#C9A84C] uppercase">
-                Српска Православна Црква · Епархија Сремска
-              </p>
-            </div>
-            <nav className="flex flex-wrap gap-x-6 gap-y-1">
-              {[
-                { label: "О исповести", href: "/ispovest" },
-                { label: "О псалтиру", href: "/psaltir" },
-                { label: "Историјат", href: "/istorijat" },
-                { label: "Галерија", href: "/galerija" },
-                { label: "Закон Божији", href: "/zakon-boziji" },
-                { label: "Задужбинарство", href: "/zaduzbinarstvo" },
-                { label: "Обавештења", href: "/#obavestenja" },
-              ].map(({ label, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  className="text-[11px] text-[#F5EDD8]/55 transition-colors hover:text-[#C9A84C]"
-                >
-                  {label}
-                </a>
-              ))}
-            </nav>
-          </div>
-          <div className="border-t border-[#C9A84C]/10 pt-4 text-center">
-            <p className="text-[10px] tracking-wide text-[#F5EDD8]/30">
-              Манастир Кувеждин · Сремска епархија СПЦ
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
       <ScrollToTop />
     </div>

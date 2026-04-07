@@ -8,7 +8,7 @@ export default function Hero() {
     <>
       <SiteNav />
 
-      <section className="grid min-h-[70vh] max-h-[750px] md:grid-cols-2">
+      <section className="grid min-h-[70vh] md:max-h-[750px] md:grid-cols-2">
         <div className="relative flex flex-col justify-center overflow-hidden bg-[#F5EDD8] px-8 py-16 md:px-12 lg:px-16">
           <div
             className="pointer-events-none absolute inset-0 opacity-[0.06]"
@@ -45,26 +45,12 @@ export default function Hero() {
               распореду богослужења и упутство онима који желе да присуствују
               молитвама у нашој светој обитељи.
             </p>
-            <div className="flex flex-wrap gap-3">
-              <a
-                href="#kontakt"
-                className="bg-[#C9A84C] px-6 py-3 text-sm tracking-wider text-[#1A1209] uppercase transition-colors hover:bg-[#E8C96A]"
-              >
-                Контакт
-              </a>
-              <a
-                href="/istorijat"
-                className="border border-[#6B1A1A] bg-transparent px-6 py-3 text-sm tracking-wider text-[#6B1A1A] uppercase transition-colors hover:bg-[#6B1A1A]/5"
-              >
-                Историјат
-              </a>
-            </div>
           </div>
         </div>
 
         <div className="relative min-h-[400px] md:min-h-0">
           <Image
-            src="/monastery-1.svg"
+            src="/P1010068.webp"
             alt="Манастир Кувеждин"
             fill
             className="object-cover"

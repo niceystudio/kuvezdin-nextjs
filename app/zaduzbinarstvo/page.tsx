@@ -6,6 +6,7 @@ import CopyButton from "@/components/CopyButton";
 import SiteNav from "@/components/SiteNav";
 import RussianOrthodoxCross from "@/components/RussianOrthodoxCross";
 import ScrollToTop from "@/components/ScrollToTop";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Задужбинарство | Манастир Кувеждин",
@@ -100,23 +101,21 @@ export default async function ZaduzbinarstvoPage() {
             backgroundPosition: "center",
           }}
         />
-        <div className="container relative mx-auto px-6 py-16 md:py-20">
-          <div className="max-w-4xl">
-            <div className="mb-6 flex items-center gap-3">
-              <div className="h-px w-8 bg-[#C9A84C]" />
-              <RussianOrthodoxCross size={24} />
-              <div className="h-px w-8 bg-[#C9A84C]" />
-            </div>
-            <p className="mb-4 text-[10px] tracking-[0.25em] text-[#C9A84C] uppercase">
-              Задужбинарство
-            </p>
-            <h1 className="font-serif text-5xl leading-none text-[#F5EDD8] md:text-6xl">
-              {pageTitle}
-            </h1>
-            <p className="mt-4 font-serif text-2xl italic text-[#F5EDD8]/80">
-              {subtitle}
-            </p>
+        <div className="container relative mx-auto flex min-h-[320px] flex-col items-center justify-center px-6 py-16 text-center md:py-20">
+          <div className="mb-6 flex items-center gap-3">
+            <div className="h-px w-8 bg-[#C9A84C]" />
+            <RussianOrthodoxCross size={24} />
+            <div className="h-px w-8 bg-[#C9A84C]" />
           </div>
+          <p className="mb-4 text-[10px] tracking-[0.25em] text-[#C9A84C] uppercase">
+            Задужбинарство
+          </p>
+          <h1 className="font-serif text-5xl leading-none text-[#F5EDD8] md:text-6xl">
+            {pageTitle}
+          </h1>
+          <p className="mt-4 font-serif text-2xl italic text-[#F5EDD8]/80">
+            {subtitle}
+          </p>
         </div>
       </section>
 
@@ -154,42 +153,7 @@ export default async function ZaduzbinarstvoPage() {
         </section>
       </main>
 
-      <footer className="border-t border-[#C9A84C]/20 bg-[#2C0808] px-6 py-8">
-        <div className="container mx-auto max-w-5xl">
-          <div className="mb-6 flex flex-wrap items-start justify-between gap-8">
-            <div className="text-[#F5EDD8]">
-              <p className="text-lg font-serif">Манастир Кувеждин</p>
-              <p className="mt-1 text-[10px] tracking-wider text-[#C9A84C] uppercase">
-                Српска православна црква · Епархија сремска
-              </p>
-            </div>
-            <nav className="flex flex-wrap gap-x-6 gap-y-1">
-              {[
-                { label: "О исповести", href: "/ispovest" },
-                { label: "О псалтиру", href: "/psaltir" },
-                { label: "Историјат", href: "/istorijat" },
-                { label: "Галерија", href: "/galerija" },
-                { label: "Закон Божији", href: "/zakon-boziji" },
-                { label: "Задужбинарство", href: "/zaduzbinarstvo" },
-                { label: "Обавештења", href: "/#obavestenja" },
-              ].map(({ label, href }) => (
-                <Link
-                  key={label}
-                  href={href}
-                  className="text-[11px] text-[#F5EDD8]/55 transition-colors hover:text-[#C9A84C]"
-                >
-                  {label}
-                </Link>
-              ))}
-            </nav>
-          </div>
-          <div className="border-t border-[#C9A84C]/10 pt-4 text-center">
-            <p className="text-[10px] tracking-wide text-[#F5EDD8]/30">
-              Манастир Кувеждин · Сремска епархија СПЦ
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
       <ScrollToTop />
     </div>

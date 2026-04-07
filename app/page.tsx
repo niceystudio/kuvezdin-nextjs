@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Hero from "@/components/Hero";
+import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import CopyButton from "@/components/CopyButton";
 
@@ -207,35 +207,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* VI. Галерија */}
-        <section className="pb-16 border-b border-[#6B1A1A]/15" id="galerija">
-          <div className="flex items-baseline gap-4 mb-8 mt-12">
-            <span className="text-5xl text-[#C9A84C]/50 font-serif leading-none">VI</span>
-            <h2 className="text-4xl text-[#6B1A1A] font-serif">Галерија</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-4 mb-8">
-            {[
-              { src: "/monastery-1.svg", alt: "Архитектура манастира", label: "АРХИТЕКТУРА" },
-              { src: "/monastery-2.svg", alt: "Перспектива манастира", label: "ПЕРСПЕКТИВА" },
-              { src: "/monastery-3.svg", alt: "Детаљи манастира", label: "ДЕТАЉИ" },
-            ].map((img) => (
-              <a key={img.label} href="/galerija" className="relative aspect-[4/3] group overflow-hidden block">
-                <Image src={img.src} alt={img.alt} fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <p className="text-xs text-white/90 tracking-[0.15em] uppercase font-medium">{img.label}</p>
-                </div>
-              </a>
-            ))}
-          </div>
-          <div className="flex justify-center">
-            <a href="/galerija" className="px-8 py-3 bg-[#C9A84C] text-[#1A1209] text-xs tracking-[0.15em] uppercase font-medium hover:bg-[#E8C96A] transition-colors">
-              ПОГЛЕДАЈ СВЕ ФОТОГРАФИЈЕ
-            </a>
-          </div>
-        </section>
-
-        {/* VII. Како доћи */}
+        {/* VI. Како доћи */}
         <section className="mt-16 pb-16" id="mapa">
           <div className="flex items-baseline gap-4 mb-8">
             <span className="text-5xl text-[#C9A84C]/50 font-serif leading-none">VII</span>
@@ -258,25 +230,7 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-[#2C0808] border-t border-[#C9A84C]/20 py-8 px-6">
-        <div className="container mx-auto max-w-5xl">
-          <div className="flex justify-between items-start gap-8 flex-wrap mb-6">
-            <div className="text-[#F5EDD8]">
-              <p className="text-lg font-serif">Манастир Кувеждин</p>
-              <p className="text-[10px] text-[#C9A84C] tracking-wider uppercase mt-1">Српска Православна Црква · Епархија Сремска</p>
-            </div>
-            <nav className="flex flex-wrap gap-x-6 gap-y-1">
-              {["О исповести", "О псалтиру", "Историјат", "Галерија", "Закон Божији", "Задужбинарство", "Обавештења"].map((label) => (
-                <a key={label} href="#" className="text-[11px] text-[#F5EDD8]/55 hover:text-[#C9A84C] transition-colors">{label}</a>
-              ))}
-            </nav>
-          </div>
-          <div className="pt-4 border-t border-[#C9A84C]/10 text-center">
-            <p className="text-[10px] text-[#F5EDD8]/30 tracking-wide">Манастир Кувеждин · Сремска епархија СПЦ</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
       <ScrollToTop />
     </div>

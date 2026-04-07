@@ -4,6 +4,7 @@ import SiteNav from "@/components/SiteNav";
 import RussianOrthodoxCross from "@/components/RussianOrthodoxCross";
 import ScrollToTop from "@/components/ScrollToTop";
 import MitarstvaAccordion from "./MitarstvaAccordion";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "О исповести | Манастир Кувеждин",
@@ -93,9 +94,8 @@ export default function IspovesPage() {
               src="/ispovest-hero.jpg"
               alt="Света тајна исповести"
               fill
-              className="object-cover"
+              className="object-contain"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#1A0404]/40 to-transparent" />
           </div>
           <div className="flex items-baseline gap-4 mb-8">
             <span className="text-5xl text-[#C9A84C]/50 font-serif leading-none">II</span>
@@ -134,12 +134,13 @@ export default function IspovesPage() {
 
           {/* Teodora bio */}
           <div className="grid md:grid-cols-2 gap-6 items-start">
-            <div className="relative aspect-[4/3] overflow-hidden">
+            <div className="relative overflow-hidden">
               <Image
                 src="/death-of-theodora.jpg"
                 alt="Преп. Теодора Цариградска"
-                fill
-                className="object-cover"
+                width={800}
+                height={600}
+                className="w-full h-auto"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1A0404]/60 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-4">
@@ -291,33 +292,7 @@ export default function IspovesPage() {
 
       </main>
 
-      {/* Footer */}
-      <footer className="bg-[#2C0808] border-t border-[#C9A84C]/20 py-8 px-6">
-        <div className="container mx-auto max-w-5xl">
-          <div className="flex justify-between items-start gap-8 flex-wrap mb-6">
-            <div className="text-[#F5EDD8]">
-              <p className="text-lg font-serif">Манастир Кувеждин</p>
-              <p className="text-[10px] text-[#C9A84C] tracking-wider uppercase mt-1">Српска Православна Црква · Епархија Сремска</p>
-            </div>
-            <nav className="flex flex-wrap gap-x-6 gap-y-1">
-              {[
-                { label: "О исповести", href: "/ispovest" },
-                { label: "О псалтиру", href: "/psaltir" },
-                { label: "Историјат", href: "/istorijat" },
-                { label: "Галерија", href: "/galerija" },
-                { label: "Закон Божији", href: "/zakon-boziji" },
-                { label: "Задужбинарство", href: "/zaduzbinarstvo" },
-                { label: "Обавештења", href: "/#obavestenja" },
-              ].map(({ label, href }) => (
-                <a key={label} href={href} className="text-[11px] text-[#F5EDD8]/55 hover:text-[#C9A84C] transition-colors">{label}</a>
-              ))}
-            </nav>
-          </div>
-          <div className="pt-4 border-t border-[#C9A84C]/10 text-center">
-            <p className="text-[10px] text-[#F5EDD8]/30 tracking-wide">Манастир Кувеждин · Сремска епархија СПЦ</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
       <ScrollToTop />
     </div>
