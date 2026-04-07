@@ -1,67 +1,12 @@
 "use client";
 import Image from "next/image";
-import MobileMenu from "./MobileMenu";
-import DesktopDropdown from "./DesktopDropdown";
+import SiteNav from "./SiteNav";
 import RussianOrthodoxCross from "./RussianOrthodoxCross";
 
 export default function Hero() {
   return (
     <>
-      <nav className="sticky top-0 z-40 border-b border-[#C9A84C]/20 bg-[#4A0E0E]">
-        <div className="container mx-auto px-6">
-          <div className="flex h-20 items-center justify-between">
-            <a href="#pocetna" className="flex items-center gap-3">
-              <Image
-                src="/spc-logo.svg"
-                alt="Српска Православна Црква"
-                width={56}
-                height={56}
-                className="h-14 w-auto object-contain"
-              />
-              <div className="border-l border-[#C9A84C]/30 py-2 pl-3">
-                <p className="text-xs leading-tight tracking-[0.15em] text-[#F5EDD8] uppercase">
-                  Српска Православна Црква
-                </p>
-                <p className="mt-0.5 text-[10px] tracking-wider text-[#C9A84C] uppercase">
-                  Епархија Сремска
-                </p>
-              </div>
-            </a>
-
-            <div className="hidden items-center gap-4 lg:flex">
-              {[
-                { href: "#pocetna", label: "Почетна" },
-                { href: "/ispovest", label: "О исповести" },
-                { href: "/psaltir", label: "О псалтиру" },
-                { href: "/istorijat", label: "Историјат" },
-                { href: "/galerija", label: "Галерија" },
-                { href: "/zakon-boziji", label: "Закон Божији" },
-              ].map((item, i) => (
-                <span key={item.href} className="flex items-center gap-4">
-                  {i > 0 && <div className="h-3 w-px bg-[#C9A84C]/30" />}
-                  <a
-                    href={item.href}
-                    className="text-sm tracking-wide text-white/90 uppercase transition-colors hover:text-[#C9A84C]"
-                  >
-                    {item.label}
-                  </a>
-                </span>
-              ))}
-              <div className="h-3 w-px bg-[#C9A84C]/30" />
-              <DesktopDropdown variant="dark" />
-              <div className="h-3 w-px bg-[#C9A84C]/30" />
-              <a
-                href="/zaduzbinarstvo"
-                className="ml-2 bg-[#C9A84C] px-5 py-2 text-xs tracking-wider text-[#1A1209] uppercase transition-colors hover:bg-[#E8C96A]"
-              >
-                Задужбинарство
-              </a>
-            </div>
-
-            <MobileMenu />
-          </div>
-        </div>
-      </nav>
+      <SiteNav />
 
       <section className="grid min-h-[70vh] max-h-[750px] md:grid-cols-2">
         <div className="relative flex flex-col justify-center overflow-hidden bg-[#F5EDD8] px-8 py-16 md:px-12 lg:px-16">

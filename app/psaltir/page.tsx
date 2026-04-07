@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import SiteNav from "@/components/SiteNav";
 import RussianOrthodoxCross from "@/components/RussianOrthodoxCross";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -102,66 +103,7 @@ const zaNovoupokojene = [
 export default function PsaltirPage() {
   return (
     <div className="min-h-screen bg-[#FAF7F2]">
-      <nav className="sticky top-0 z-40 border-b border-[#C9A84C]/20 bg-[#4A0E0E]">
-        <div className="container mx-auto px-6">
-          <div className="flex h-20 items-center justify-between">
-            <Link href="/" className="flex items-center gap-3">
-              <Image
-                src="/spc-logo.svg"
-                alt="Српска Православна Црква"
-                width={56}
-                height={56}
-                className="h-14 w-auto object-contain"
-              />
-              <div className="border-l border-[#C9A84C]/30 pl-3 py-2">
-                <p className="text-xs leading-tight tracking-[0.15em] text-[#F5EDD8] uppercase">
-                  Српска Православна Црква
-                </p>
-                <p className="mt-0.5 text-[10px] tracking-wider text-[#C9A84C] uppercase">
-                  Епархија Сремска
-                </p>
-              </div>
-            </Link>
-            <div className="hidden items-center gap-4 lg:flex">
-              {[
-                { href: "/", label: "Почетна" },
-                { href: "/ispovest", label: "О исповести" },
-                { href: "/psaltir", label: "О псалтиру" },
-                { href: "/istorijat", label: "Историјат" },
-                { href: "/galerija", label: "Галерија" },
-                { href: "/zakon-boziji", label: "Закон Божији" },
-              ].map((item, i) => (
-                <span key={item.href} className="flex items-center gap-4">
-                  {i > 0 && <div className="h-3 w-px bg-[#C9A84C]/30" />}
-                  <Link
-                    href={item.href}
-                    className={`text-sm tracking-wide uppercase transition-colors ${
-                      item.href === "/psaltir"
-                        ? "text-[#C9A84C]"
-                        : "text-white/90 hover:text-[#C9A84C]"
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                </span>
-              ))}
-              <div className="h-3 w-px bg-[#C9A84C]/30" />
-              <Link
-                href="/zaduzbinarstvo"
-                className="ml-2 bg-[#C9A84C] px-5 py-2 text-xs font-medium tracking-wider text-[#1A1209] uppercase transition-colors hover:bg-[#E8C96A]"
-              >
-                Задужбинарство
-              </Link>
-            </div>
-            <Link
-              href="/"
-              className="text-sm tracking-wide text-[#F5EDD8]/70 transition-colors hover:text-[#C9A84C] lg:hidden"
-            >
-              Почетна
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <SiteNav />
 
       <section className="relative overflow-hidden bg-[#2C0808]">
         <div
@@ -173,53 +115,18 @@ export default function PsaltirPage() {
             backgroundPosition: "center",
           }}
         />
-        <div className="relative grid min-h-[420px] md:grid-cols-2">
-          <div className="relative z-10 flex flex-col justify-center px-8 py-16 md:px-12 lg:px-16">
-            <div className="mb-6 flex items-center gap-3">
-              <div className="h-px w-8 bg-[#C9A84C]" />
-              <RussianOrthodoxCross size={24} />
-              <div className="h-px w-8 bg-[#C9A84C]" />
-            </div>
-            <p className="mb-4 text-[10px] tracking-[0.25em] text-[#C9A84C] uppercase">
-              О Псалтиру
-            </p>
-            <h1 className="mb-6 font-serif text-5xl leading-none text-[#F5EDD8] md:text-6xl">
-              Упутство за читање псалтира
-            </h1>
-            <div className="mb-6 h-px w-24 bg-[#C9A84C]/40" />
-            <p className="max-w-sm font-serif text-base leading-relaxed text-[#F5EDD8]/70 italic">
-              Упутство за молитвено и пажљиво читање псалтира у дому и за
-              упокојене.
-            </p>
+        <div className="container relative mx-auto flex min-h-[320px] flex-col items-center justify-center px-6 py-16 text-center md:py-20">
+          <div className="mb-6 flex items-center gap-3">
+            <div className="h-px w-8 bg-[#C9A84C]" />
+            <RussianOrthodoxCross size={24} />
+            <div className="h-px w-8 bg-[#C9A84C]" />
           </div>
-          <div className="grid gap-4 px-6 py-8 md:grid-cols-2 md:px-8 md:py-10">
-            <div className="relative min-h-[240px] overflow-hidden border border-[#C9A84C]/20 md:col-span-2">
-              <Image
-                src="/psaltir/psaltir-slika.jpg"
-                alt="Псалтир"
-                fill
-                className="object-cover"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#2C0808]/55 to-transparent" />
-            </div>
-            <div className="relative min-h-[180px] overflow-hidden border border-[#C9A84C]/20">
-              <Image
-                src="/psaltir/psaltir-a.jpg"
-                alt="Књига псалтира"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="relative min-h-[180px] overflow-hidden border border-[#C9A84C]/20">
-              <Image
-                src="/psaltir/zlatni-psaltir.png"
-                alt="Издање псалтира"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
+          <p className="mb-4 text-[10px] tracking-[0.25em] text-[#C9A84C] uppercase">
+            О Псалтиру
+          </p>
+          <h1 className="font-serif text-5xl leading-none text-[#F5EDD8] md:text-6xl">
+            Упутство за читање псалтира
+          </h1>
         </div>
       </section>
 
@@ -340,7 +247,6 @@ export default function PsaltirPage() {
                 { label: "Закон Божији", href: "/zakon-boziji" },
                 { label: "Задужбинарство", href: "/zaduzbinarstvo" },
                 { label: "Обавештења", href: "/#obavestenja" },
-                { label: "Преузимања", href: "/#preuzimanja" },
               ].map(({ label, href }) => (
                 <a
                   key={label}

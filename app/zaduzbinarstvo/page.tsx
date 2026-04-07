@@ -3,6 +3,7 @@ import Link from "next/link";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import CopyButton from "@/components/CopyButton";
+import SiteNav from "@/components/SiteNav";
 import RussianOrthodoxCross from "@/components/RussianOrthodoxCross";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -87,62 +88,7 @@ export default async function ZaduzbinarstvoPage() {
 
   return (
     <div className="min-h-screen bg-[#FAF7F2]">
-      <nav className="sticky top-0 z-40 border-b border-[#C9A84C]/20 bg-[#4A0E0E]">
-        <div className="container mx-auto px-6">
-          <div className="flex h-20 items-center justify-between">
-            <Link href="/" className="flex items-center gap-3">
-              <Image
-                src="/spc-logo.svg"
-                alt="Српска православна црква"
-                width={56}
-                height={56}
-                className="h-14 w-auto object-contain"
-              />
-              <div className="border-l border-[#C9A84C]/30 py-2 pl-3">
-                <p className="text-xs leading-tight tracking-[0.15em] text-[#F5EDD8] uppercase">
-                  Српска православна црква
-                </p>
-                <p className="mt-0.5 text-[10px] tracking-wider text-[#C9A84C] uppercase">
-                  Епархија сремска
-                </p>
-              </div>
-            </Link>
-            <div className="hidden items-center gap-4 lg:flex">
-              {[
-                { href: "/", label: "Почетна" },
-                { href: "/ispovest", label: "О исповести" },
-                { href: "/psaltir", label: "О псалтиру" },
-                { href: "/istorijat", label: "Историјат" },
-                { href: "/galerija", label: "Галерија" },
-                { href: "/zakon-boziji", label: "Закон Божији" },
-              ].map((item, index) => (
-                <span key={item.href} className="flex items-center gap-4">
-                  {index > 0 && <div className="h-3 w-px bg-[#C9A84C]/30" />}
-                  <Link
-                    href={item.href}
-                    className="text-sm tracking-wide uppercase text-white/90 transition-colors hover:text-[#C9A84C]"
-                  >
-                    {item.label}
-                  </Link>
-                </span>
-              ))}
-              <div className="h-3 w-px bg-[#C9A84C]/30" />
-              <Link
-                href="/zaduzbinarstvo"
-                className="ml-2 bg-[#C9A84C] px-5 py-2 text-xs font-medium tracking-wider text-[#1A1209] uppercase transition-colors hover:bg-[#E8C96A]"
-              >
-                Задужбинарство
-              </Link>
-            </div>
-            <Link
-              href="/"
-              className="text-sm tracking-wide text-[#F5EDD8]/70 transition-colors hover:text-[#C9A84C] lg:hidden"
-            >
-              Почетна
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <SiteNav />
 
       <section className="relative overflow-hidden bg-[#2C0808]">
         <div
@@ -226,7 +172,6 @@ export default async function ZaduzbinarstvoPage() {
                 { label: "Закон Божији", href: "/zakon-boziji" },
                 { label: "Задужбинарство", href: "/zaduzbinarstvo" },
                 { label: "Обавештења", href: "/#obavestenja" },
-                { label: "Преузимања", href: "/#preuzimanja" },
               ].map(({ label, href }) => (
                 <Link
                   key={label}

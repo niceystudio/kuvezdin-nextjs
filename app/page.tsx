@@ -267,7 +267,7 @@ export default function Home() {
               <p className="text-[10px] text-[#C9A84C] tracking-wider uppercase mt-1">Српска Православна Црква · Епархија Сремска</p>
             </div>
             <nav className="flex flex-wrap gap-x-6 gap-y-1">
-              {["О исповести", "О псалтиру", "Историјат", "Галерија", "Закон Божији", "Задужбинарство", "Обавештења", "Преузимања"].map((label) => (
+              {["О исповести", "О псалтиру", "Историјат", "Галерија", "Закон Божији", "Задужбинарство", "Обавештења"].map((label) => (
                 <a key={label} href="#" className="text-[11px] text-[#F5EDD8]/55 hover:text-[#C9A84C] transition-colors">{label}</a>
               ))}
             </nav>

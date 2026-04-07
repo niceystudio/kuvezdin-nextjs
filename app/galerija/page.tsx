@@ -1,7 +1,7 @@
 import { readdir } from "node:fs/promises";
 import { join } from "node:path";
 import GalleryBrowser from "@/components/GalleryBrowser";
-import GalerijaNav from "@/components/GalerijaNav";
+import SiteNav from "@/components/SiteNav";
 import RussianOrthodoxCross from "@/components/RussianOrthodoxCross";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -91,7 +91,7 @@ export default async function GalerijaPage() {
 
   return (
     <div className="min-h-screen bg-[#FAF7F2]">
-      <GalerijaNav />
+      <SiteNav />
 
       <section className="relative overflow-hidden bg-[#2C0808]">
         <div
@@ -140,7 +140,6 @@ export default async function GalerijaPage() {
                 { label: "Закон Божији", href: "/zakon-boziji" },
                 { label: "Задужбинарство", href: "/zaduzbinarstvo" },
                 { label: "Обавештења", href: "/#obavestenja" },
-                { label: "Преузимања", href: "/#preuzimanja" },
               ].map(({ label, href }) => (
                 <a
                   key={label}
