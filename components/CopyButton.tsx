@@ -12,7 +12,7 @@ export default function CopyButton({ text }: { text: string }) {
 
   return (
     <button
-      className="inline-flex items-center gap-2 px-5 py-3 border border-[#6B1A1A]/30 bg-transparent text-[#6B1A1A] text-xs tracking-wider hover:bg-[#6B1A1A] hover:text-[#F5EDD8] hover:border-[#6B1A1A] transition-colors whitespace-nowrap uppercase"
+      className="inline-flex items-center gap-2 px-5 py-3 bg-[#C9A84C] text-[#1A1209] text-xs tracking-wider hover:bg-[#E8C96A] transition-colors whitespace-nowrap uppercase font-medium"
       onClick={handleCopy}
       disabled={copied}
     >
