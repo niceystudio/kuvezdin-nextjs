@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Agentation } from "agentation";
+
+const monahOCS = localFont({
+  src: "./fonts/MonahOCS.otf",
+  variable: "--font-monahocs",
+});
 
 export const metadata: Metadata = {
   title: "Манастир Кувеждин | Српска Православна Црква",
@@ -16,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="sr">
+    <html lang="sr" className={monahOCS.variable}>
       <body>
         {children}
         {process.env.NODE_ENV === "development" && <Agentation />}

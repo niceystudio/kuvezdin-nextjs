@@ -35,7 +35,7 @@ export default function IspovesPage() {
             <div className="h-px w-8 bg-[#C9A84C]"></div>
           </div>
           <p className="text-[10px] text-[#C9A84C] tracking-[0.25em] uppercase mb-4">Света тајна</p>
-          <h1 className="text-5xl md:text-6xl text-[#F5EDD8] font-serif leading-none">
+          <h1 className="font-serif text-[#F5EDD8]">
             Покајање и исповест
           </h1>
         </div>

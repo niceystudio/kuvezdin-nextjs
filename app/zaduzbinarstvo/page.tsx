@@ -110,7 +110,7 @@ export default async function ZaduzbinarstvoPage() {
           <p className="mb-4 text-[10px] tracking-[0.25em] text-[#C9A84C] uppercase">
             Задужбинарство
           </p>
-          <h1 className="font-serif text-5xl leading-none text-[#F5EDD8] md:text-6xl">
+          <h1 className="font-serif text-[#F5EDD8]">
             {pageTitle}
           </h1>
           <p className="mt-4 font-serif text-2xl italic text-[#F5EDD8]/80">

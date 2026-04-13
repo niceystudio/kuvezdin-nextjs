@@ -25,7 +25,7 @@ export default function Home() {
                   <span className="text-xl text-[#6B1A1A] font-serif">6:00</span>
                 </div>
                 <div className="flex justify-between items-baseline pb-3 border-b border-[#6B1A1A]/10">
-                  <span className="text-sm text-[#4A3C2A]">Молитва за здравље — Јелеосвећење</span>
+                  <span className="text-sm text-[#4A3C2A]">Јелеосвећење - Молитва за здравље</span>
                   <span className="text-xl text-[#6B1A1A] font-serif">9:30</span>
                 </div>
                 <div className="flex justify-between items-baseline">

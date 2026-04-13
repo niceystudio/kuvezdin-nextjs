@@ -32,7 +32,7 @@ export default function Hero() {
               <RussianOrthodoxCross size={24} />
               <div className="h-px w-8 bg-[#C9A84C]" />
             </div>
-            <h1 className="mb-6 font-serif text-5xl leading-none text-[#6B1A1A] md:text-6xl lg:text-7xl">
+            <h1 className="mb-6 font-serif text-[#6B1A1A]">
               Манастир
               <br />
               Кувеждин

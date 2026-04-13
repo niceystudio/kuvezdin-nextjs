@@ -125,7 +125,7 @@ export default function PsaltirPage() {
           <p className="mb-4 text-[10px] tracking-[0.25em] text-[#C9A84C] uppercase">
             О Псалтиру
           </p>
-          <h1 className="font-serif text-5xl leading-none text-[#F5EDD8] md:text-6xl">
+          <h1 className="font-serif text-[#F5EDD8]">
             Упутство за читање псалтира
           </h1>
         </div>

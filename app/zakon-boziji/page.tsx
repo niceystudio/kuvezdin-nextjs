@@ -160,9 +160,9 @@ export default async function ZakonBozijiPage() {
             <div className="h-px w-8 bg-[#C9A84C]" />
           </div>
           <p className="mb-4 text-[10px] tracking-[0.25em] text-[#C9A84C] uppercase">
-            Закон Божији
+            КЊИГА ЗА ПОРОДИЦУ И ШКОЛУ
           </p>
-          <h1 className="font-serif text-5xl leading-none text-[#F5EDD8] md:text-6xl">
+          <h1 className="font-serif text-[#F5EDD8]">
             {titleText}
           </h1>
         </div>

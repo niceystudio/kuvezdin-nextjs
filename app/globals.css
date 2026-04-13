@@ -1,5 +1,166 @@
 @import "tailwindcss";
 
+/* ── Design Tokens ──────────────────────────────────────────────────────────── */
+/* Single source of truth for all colors. Generates Tailwind utilities:         */
+/* text-primary, bg-gold, border-surface, text-on-dark, etc.                    */
+
+@theme {
+  /* Accent */
+  --color-gold:           #C9A84C;  /* CTAs, ornaments, active states */
+  --color-gold-hover:     #E8C96A;  /* Gold hover */
+  --color-gold-brown:     #8D6A2B;  /* Section labels, tertiary text */
+
+  /* Primary brand — burgundy */
+  --color-primary:        #6B1A1A;  /* Headings, borders, accents */
+  --color-nav:            #4A0E0E;  /* Navigation background */
+  --color-dark:           #2C0808;  /* Hero sections, footer */
+  --color-overlay:        #1A0404;  /* Image gradient overlays */
+
+  /* Text */
+  --color-body:           #4A3C2A;  /* Main body text */
+  --color-muted:          #6B5C4C;  /* Labels, captions, secondary text */
+  --color-on-dark:        #F5EDD8;  /* Text on dark backgrounds */
+  --color-on-gold:        #1A1209;  /* Text on gold buttons */
+
+  /* Backgrounds */
+  --color-bg:             #FAF7F2;  /* Page background */
+  --color-surface:        #FBF7EE;  /* Cards, info boxes */
+  --color-surface-alt:    #F2EDE3;  /* Blockquotes, alternate surfaces */
+  --color-surface-muted:  #F3EEE4;  /* Image placeholders */
+  --color-surface-warm:   #E8DCC8;  /* Donation / account info box */
+}
+
+/* ── Global h1 ──────────────────────────────────────────────────────────────── */
+h1 {
+  font-family: var(--font-monahocs), serif;
+  font-size: 3.75rem; /* text-6xl */
+  line-height: 1;
+}
+@media (min-width: 768px)  { h1 { font-size: 4.5rem; } } /* text-7xl */
+@media (min-width: 1024px) { h1 { font-size: 6rem;   } } /* text-8xl */
+
+/* ── Component Classes ──────────────────────────────────────────────────────── */
+/* Use these class names instead of repeating Tailwind utility combinations.     */
+/* Tailwind utilities added on the element still override these (layer order).   */
+
+@layer components {
+
+  /* ── Buttons ── */
+  .btn-primary {
+    display: inline-block;
+    background-color: var(--color-gold);
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--color-on-gold);
+    text-transform: uppercase;
+    transition: background-color 150ms;
+    cursor: pointer;
+  }
+  .btn-primary:hover { background-color: var(--color-gold-hover); }
+
+  .btn-primary-sm {
+    display: inline-block;
+    background-color: var(--color-gold);
+    padding: 0.5rem 1.25rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--color-on-gold);
+    text-transform: uppercase;
+    transition: background-color 150ms;
+    cursor: pointer;
+  }
+  .btn-primary-sm:hover { background-color: var(--color-gold-hover); }
+
+  .btn-secondary {
+    display: inline-block;
+    border: 1px solid var(--color-primary);
+    background: transparent;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    transition: background-color 150ms;
+    cursor: pointer;
+  }
+  .btn-secondary:hover { background-color: rgba(107, 26, 26, 0.05); }
+
+  /* ── Cards / Surfaces ── */
+  .card {
+    background-color: var(--color-surface);
+    border: 1px solid rgba(107, 26, 26, 0.10);
+    padding: 1.5rem;
+  }
+  .card-accent-primary {
+    background-color: var(--color-surface);
+    border: 1px solid rgba(107, 26, 26, 0.10);
+    border-top: 4px solid var(--color-primary);
+    padding: 1.5rem;
+  }
+  .card-accent-gold {
+    background-color: var(--color-surface);
+    border: 1px solid rgba(107, 26, 26, 0.10);
+    border-top: 4px solid var(--color-gold);
+    padding: 1.5rem;
+  }
+
+  /* ── Callouts ── */
+  .callout-primary {
+    border-left: 4px solid var(--color-primary);
+    padding-left: 1.5rem;
+  }
+  .callout-gold {
+    border-left: 4px solid var(--color-gold);
+    padding-left: 1.5rem;
+  }
+
+  /* ── Blockquote ── */
+  .blockquote {
+    border-left: 4px solid var(--color-gold);
+    background-color: var(--color-surface-alt);
+    padding: 1.25rem 1.5rem;
+    font-style: italic;
+    font-size: 1.125rem;
+    line-height: 1.625;
+    color: var(--color-primary);
+  }
+
+  /* ── Typography ── */
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: var(--color-gold);
+    text-transform: uppercase;
+  }
+  .eyebrow-muted {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--color-gold-brown);
+    text-transform: uppercase;
+  }
+
+  /* ── List with ornament bullet ── */
+  .list-item-ornament {
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 1rem;
+    color: var(--color-body);
+    line-height: 1.625;
+  }
+  .list-item-ornament::before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    font-size: 7px;
+    color: var(--color-gold);
+  }
+}
+
+/* ── Base ───────────────────────────────────────────────────────────────────── */
 :root {
   --font-size: 16px;
   --background: #ffffff;
@@ -35,6 +196,7 @@
   body {
     background-color: var(--background);
     color: var(--foreground);
+    overflow-x: hidden;
   }
   html {
     font-size: var(--font-size);
