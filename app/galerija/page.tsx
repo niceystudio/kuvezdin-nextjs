@@ -73,7 +73,7 @@ async function getGallerySections() {
         .sort((a, b) => collator.compare(a, b))
         .map((fileName) => ({
           src: `/galerija/${period.folder}/${fileName}`,
-          alt: `${period.title} - ${toLabel(fileName)}`,
+          alt: `Фотографија из галерије Манастира Кувеждин, ${toLabel(fileName)}`,
           label: toLabel(fileName),
           sectionId: period.id,
           sectionTitle: period.title,

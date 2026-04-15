@@ -24,7 +24,7 @@ export default function GalerijaNav() {
             <Link href="/" className="flex items-center gap-3">
               <Image
                 src="/spc-logo.svg"
-                alt="Српска Православна Црква"
+                alt="Грб Српске православне цркве на сајту Манастира Кувеждин"
                 width={56}
                 height={56}
                 className="h-14 w-auto object-contain"
@@ -92,7 +92,7 @@ export default function GalerijaNav() {
             >
               <Image
                 src="/spc-logo.svg"
-                alt="Српска Православна Црква"
+                alt="Грб Српске православне цркве на сајту Манастира Кувеждин"
                 width={48}
                 height={48}
                 className="h-12 w-auto object-contain"

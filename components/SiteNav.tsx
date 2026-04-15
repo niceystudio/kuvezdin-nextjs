@@ -31,7 +31,7 @@ export default function SiteNav() {
             <a href={homeHref} className="flex items-center gap-3">
               <Image
                 src="/Грб_СПЦ.png"
-                alt="Српска Православна Црква"
+                alt="Грб Српске православне цркве на сајту Манастира Кувеждин"
                 width={56}
                 height={56}
                 className="h-10 w-auto object-contain sm:h-14"

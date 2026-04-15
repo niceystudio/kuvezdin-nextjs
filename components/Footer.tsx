@@ -8,7 +8,7 @@ export default function Footer() {
           <div className="flex items-center gap-3 text-[#F5EDD8]">
             <Image
               src="/Грб_СПЦ.png"
-              alt="Српска Православна Црква"
+              alt="Грб Српске православне цркве на сајту Манастира Кувеждин"
               width={48}
               height={48}
               className="h-12 w-auto object-contain"

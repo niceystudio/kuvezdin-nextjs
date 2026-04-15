@@ -3,7 +3,8 @@
     "allow": [
       "Read(//c/Users/Nicey/Documents/copy/**)",
       "Bash(python3 -c \":*)",
-      "Bash(npx next:*)"
+      "Bash(npx next:*)",
+      "Bash(ls c:/Users/Nicey/Documents/kuvezdin-nextjs/.env*)"
     ]
   }
 }

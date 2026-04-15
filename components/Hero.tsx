@@ -12,7 +12,7 @@ export default function Hero() {
         <div className="relative flex min-h-[calc(100svh-4rem)] items-end overflow-hidden bg-[#2C0808] px-5 pb-8 pt-12">
           <Image
             src="/P1010068.webp"
-            alt="Манастир Кувеждин"
+            alt="Манастир Кувеждин, поглед на манастирски комплекс"
             fill
             className="object-cover"
             priority
@@ -118,7 +118,7 @@ export default function Hero() {
         <div className="relative min-h-[400px] md:min-h-0">
           <Image
             src="/P1010068.webp"
-            alt="Манастир Кувеждин"
+            alt="Манастир Кувеждин, поглед на манастирски комплекс"
             fill
             className="object-cover"
             priority

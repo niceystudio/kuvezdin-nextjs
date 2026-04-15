@@ -92,7 +92,7 @@ export default function IspovesPage() {
         <section className="pb-16 border-b border-[#6B1A1A]/15" id="mitarstva-uvod">
           <ZoomableImage
             src="/ispovest-hero.jpg"
-            alt="Света тајна исповести"
+            alt="Света тајна исповести у Манастиру Кувеждин"
             fill
             mobileOnly
             modalWidth={1600}
@@ -141,7 +141,7 @@ export default function IspovesPage() {
           <div className="grid md:grid-cols-2 gap-6 items-start">
             <ZoomableImage
               src="/death-of-theodora.jpg"
-              alt="Преп. Теодора Цариградска"
+              alt="Преподобна Теодора Цариградска, илустрација уз текст на сајту Манастира Кувеждин"
               width={800}
               height={600}
               modalWidth={1200}
@@ -186,7 +186,7 @@ export default function IspovesPage() {
 
           <ZoomableImage
             src="/mytarstva.jpg"
-            alt="Митарства"
+            alt="Митарства, илустрација уз помоћник за исповест Манастира Кувеждин"
             fill
             modalWidth={1200}
             modalHeight={900}

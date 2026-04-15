@@ -91,44 +91,44 @@ async function getContentBlocks() {
 const bookPhotos = [
   {
     src: "/zakon-boziji/knjiga-01.jpg",
-    alt: "Закон Божији, корица",
+    alt: "Књига Закон Божији, корица, издање Манастира Кувеждин",
     caption: "ЗАКОН БОЖИЈИ",
   },
   {
     src: "/zakon-boziji/knjiga-02.jpg",
-    alt: "Закон Божији, отворена књига",
+    alt: "Књига Закон Божији, отворено издање Манастира Кувеждин",
     caption: "КЊИГА ЗА ПОРОДИЦУ И ШКОЛУ",
   },
   {
     src: "/zakon-boziji/knjiga-ugao-96.jpg",
-    alt: "Закон Божији, књига из угла",
+    alt: "Књига Закон Божији фотографисана из угла, издање Манастира Кувеждин",
     caption: "ИЗДАЊЕ МАНАСТИРА КУВЕЖДИН",
   },
   {
     src: "/zakon-boziji/knjiga-ugao-97.jpg",
-    alt: "Закон Божији, бочни угао",
+    alt: "Књига Закон Божији, бочни угао, Манастир Кувеждин",
     caption: "ФОТОГРАФИЈА КЊИГЕ",
   },
   {
     src: "/zakon-boziji/knjiga-ugao-98.jpg",
-    alt: "Закон Божији, детаљ корице",
+    alt: "Књига Закон Божији, детаљ корице, Манастир Кувеждин",
     caption: "ДЕТАЉ ИЗДАЊА",
   },
   {
     src: "/zakon-boziji/knjiga-ugao-99.jpg",
-    alt: "Закон Божији, приказ књиге",
+    alt: "Књига Закон Божији, приказ књиге, Манастир Кувеждин",
     caption: "ПРИКАЗ КЊИГЕ",
   },
   {
     src: "/zakon-boziji/knjiga-ugao-100.jpg",
-    alt: "Закон Божији, приказ из угла",
+    alt: "Књига Закон Божији, приказ из угла, Манастир Кувеждин",
     caption: "ШТАМПАНО ИЗДАЊЕ",
   },
 ] as const;
 
 const contentScreens = Array.from({ length: 10 }, (_, index) => ({
   src: `/zakon-boziji/sadrzaj-${String(index + 1).padStart(2, "0")}.png`,
-  alt: `Садржај књиге, страна ${index + 1}`,
+  alt: `Садржај књиге Закон Божији, страна ${index + 1}, Манастир Кувеждин`,
   caption: `САДРЖАЈ КЊИГЕ ${index + 1}`,
   imageFit: "contain" as const,
   aspectClassName: "aspect-[3/4]",
