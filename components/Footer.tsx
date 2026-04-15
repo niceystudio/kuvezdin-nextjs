@@ -9,8 +9,10 @@ export default function Footer() {
             <Image
               src="/Грб_СПЦ.png"
               alt="Грб Српске православне цркве на сајту Манастира Кувеждин"
+              title="Грб Српске православне цркве"
               width={48}
               height={48}
+              loading="lazy"
               className="h-12 w-auto object-contain"
             />
             <div>

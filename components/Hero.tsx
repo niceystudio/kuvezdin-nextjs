@@ -13,9 +13,11 @@ export default function Hero() {
           <Image
             src="/P1010068.webp"
             alt="Манастир Кувеждин, поглед на манастирски комплекс"
+            title="Манастир Кувеждин на Фрушкој гори"
             fill
-            className="object-cover"
+            loading="eager"
             priority
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#140404]/35 via-[#140404]/20 to-[#140404]/88" />
           <div
@@ -36,7 +38,7 @@ export default function Hero() {
             </div>
 
             <h1 className="mb-4 font-serif text-[#F5EDD8]">
-              Манастир
+              Манастир{" "}
               <br />
               Кувеждин
             </h1>
@@ -99,11 +101,11 @@ export default function Hero() {
               <RussianOrthodoxCross size={24} />
               <div className="h-px w-8 bg-[#C9A84C]" />
             </div>
-            <h1 className="mb-6 font-serif text-[#6B1A1A]">
+            <div className="mb-6 text-[#6B1A1A] text-6xl md:text-7xl lg:text-8xl leading-none" style={{ fontFamily: "var(--font-monahocs), serif" }} aria-hidden="true">
               Манастир
               <br />
               Кувеждин
-            </h1>
+            </div>
             <div className="mb-7 flex items-center gap-3">
               <div className="h-px max-w-[420px] flex-1 bg-[#C9A84C]/30" />
             </div>
@@ -119,9 +121,11 @@ export default function Hero() {
           <Image
             src="/P1010068.webp"
             alt="Манастир Кувеждин, поглед на манастирски комплекс"
+            title="Манастир Кувеждин на Фрушкој гори"
             fill
-            className="object-cover"
+            loading="eager"
             priority
+            className="object-cover"
           />
           <div className="absolute right-0 bottom-0 left-0 bg-gradient-to-t from-[#140404]/80 to-transparent px-6 py-5">
             <p className="text-xs tracking-[0.15em] text-[#F5EDD8] uppercase">
