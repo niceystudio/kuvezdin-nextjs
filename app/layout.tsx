@@ -1,7 +1,8 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Agentation } from "agentation";
+import { Analytics } from "@vercel/analytics/next";
 
 const monahOCS = localFont({
   src: "./fonts/MonahOCS.otf",
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body>
         {children}
         {process.env.NODE_ENV === "development" && <Agentation />}
+        <Analytics />
       </body>
     </html>
   );
