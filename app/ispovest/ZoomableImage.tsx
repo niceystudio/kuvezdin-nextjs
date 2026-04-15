@@ -66,7 +66,7 @@ export default function ZoomableImage({
         type="button"
         onClick={handleOpen}
         className={`block w-full border-0 bg-transparent p-0 ${className ?? ""}`}
-        aria-label={`Uvećaj fotografiju: ${alt}`}
+        aria-label={`Увећај фотографију: ${alt}`}
       >
         {fill ? (
           <Image src={src} alt={alt} fill className={imageClassName} />
@@ -90,9 +90,9 @@ export default function ZoomableImage({
                 type="button"
                 onClick={() => setIsOpen(false)}
                 className="inline-flex h-11 min-w-11 items-center justify-center border border-[#F5EDD8]/30 bg-[#2C0808]/70 px-4 text-sm font-semibold uppercase tracking-[0.14em] text-[#F5EDD8]"
-                aria-label="Zatvori uvećanu fotografiju"
+                aria-label="Затвори увећану фотографију"
               >
-                Zatvori
+                Затвори
               </button>
             </div>
             <div className="flex flex-1 items-center justify-center">

@@ -130,10 +130,7 @@ export default async function ZaduzbinarstvoPage() {
         </section>
 
         <section className="pb-16">
-          <div className="mb-8 mt-12 flex items-baseline gap-4">
-            <span className="font-serif text-5xl leading-none text-[#C9A84C]/50">
-              II
-            </span>
+          <div className="mb-8 mt-12 text-center">
             <h2 className="font-serif text-4xl text-[#6B1A1A]">
               Добровољни прилози
             </h2>
