@@ -76,7 +76,7 @@ export default function Hero() {
         </div>
       </section>
 
-      <section className="hidden min-h-[70vh] md:grid md:max-h-[750px] md:grid-cols-2">
+      <section className="hidden min-h-[70vh] md:grid md:max-h-[750px] md:grid-cols-2 lg:grid-cols-[40%_60%] xl:grid-cols-[35%_65%]">
         <div className="relative flex flex-col justify-center overflow-hidden bg-[#F5EDD8] px-8 py-16 md:px-12 lg:px-16">
           <div
             className="pointer-events-none absolute inset-0 opacity-[0.06]"
