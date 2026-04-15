@@ -1,9 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
-import Image from "next/image";
 import SiteNav from "@/components/SiteNav";
 import RussianOrthodoxCross from "@/components/RussianOrthodoxCross";
 import ScrollToTop from "@/components/ScrollToTop";
 import MitarstvaAccordion from "./MitarstvaAccordion";
+import ZoomableImage from "./ZoomableImage";
 import Footer from "@/components/Footer";
 
 export const metadata = {
@@ -49,7 +49,7 @@ export default function IspovesPage() {
             <span className="text-5xl text-[#C9A84C]/50 font-serif leading-none">I</span>
             <h2 className="text-4xl text-[#6B1A1A] font-serif">Основно о Светој тајни покајања</h2>
           </div>
-          <p className="text-[10px] text-[#6B5C4C] tracking-wider uppercase mb-6">из Закона Божијег</p>
+          <p className="text-xs font-semibold text-[#6B5C4C] tracking-wider uppercase mb-6">из Закона Божијег</p>
 
           <div className="space-y-5">
             <p className="text-base text-[#4A3C2A] leading-relaxed">
@@ -82,21 +82,25 @@ export default function IspovesPage() {
 
           <div className="bg-[#F2EDE3] border-l-4 border-[#6B1A1A] p-5">
             <p className="text-base text-[#4A3C2A] leading-relaxed">
-              У посебним случајевима на покајаног се налаже <strong className="text-[#6B1A1A]">„епитимија"</strong> (грчка реч - забрана, ограничење), која се sastoji od добрих дела и неких лишавања, направљених због савладавања греховних навика.
+              У посебним случајевима на покајаног се налаже <strong className="text-[#6B1A1A]">„епитимија"</strong> (грчка реч - забрана, ограничење), која се састоји од добрих дела и неких лишавања, направљених због савладавања греховних навика.
             </p>
           </div>
         </section>
 
         {/* II. О митарствима */}
         <section className="pb-16 border-b border-[#6B1A1A]/15" id="mitarstva-uvod">
-          <div className="relative mb-10 mt-12 aspect-[21/9] overflow-hidden">
-            <Image
-              src="/ispovest-hero.jpg"
-              alt="Света тајна исповести"
-              fill
-              className="object-contain"
-            />
-          </div>
+          <ZoomableImage
+            src="/ispovest-hero.jpg"
+            alt="Света тајна исповести"
+            fill
+            mobileOnly
+            modalWidth={1600}
+            modalHeight={900}
+            className="relative mb-10 mt-12 aspect-[21/9] overflow-hidden md:cursor-default"
+            imageClassName="object-contain"
+          >
+            <span className="sr-only">Увећај фотографију</span>
+          </ZoomableImage>
           <div className="flex items-baseline gap-4 mb-8">
             <span className="text-5xl text-[#C9A84C]/50 font-serif leading-none">II</span>
             <h2 className="text-4xl text-[#6B1A1A] font-serif">О митарствима</h2>
@@ -118,7 +122,7 @@ export default function IspovesPage() {
           </div>
 
           <div className="bg-[#FBF7EE] border border-[#6B1A1A]/10 p-6 mb-10">
-            <p className="text-[10px] text-[#6B5C4C] tracking-wider uppercase mb-4">Шта су митарства</p>
+            <p className="text-xs font-semibold text-[#6B5C4C] tracking-wider uppercase mb-4">Шта су митарства</p>
             <p className="text-base text-[#4A3C2A] leading-relaxed mb-4">
               Митарства су нека врста царинарница, на које наилазе душе умрлих људи улазећи ка престолу Небеског Судије. На митарствима стоје духови зла и траже од сваке душе царину или откуп за грехе које је починила. Та царина, тај откуп sastoji се у добрим делима, супротним учињеном греху. Назив: митарства и митари, позајмљен је из историје јеврејске. Код Јевреја митарима су се називала лица, одређена од Римљана за скупљање пореза. При том послу, митари су употребљавали сва могућа средства, само да би што више скупили дажбина. Митари су стојали код нарочитих царинарница, или трошаринских станица, и наплаћивали за преношену робу трошарину. Те трошаринске станице називале су се митнице, митарства. Овај назив хришћански писци су употребили и назвали митарствима она места у ваздуху између земље и неба, на којима зли дуси задржавају душе покојника при њиховом улазу ка Престолу Господњем, истражују њихове грехе, и на тај начин низводе у ад.
             </p>
@@ -126,27 +130,30 @@ export default function IspovesPage() {
 
           {/* Citat sv. Kirila */}
           <div className="border-l-4 border-[#C9A84C] pl-6 mb-10">
-            <p className="text-[10px] text-[#6B5C4C] tracking-wider uppercase mb-3">Свети Кирило Александријски (444. год.) - О исходу душе</p>
-            <p className="text-base text-[#4A3C2A] leading-relaxed italic">
+            <p className="text-xs font-semibold text-[#6B5C4C] tracking-wider uppercase mb-3">Свети Кирило Александријски (444. год.) - О исходу душе</p>
+            <p className="text-base text-[#4A3C2A] leading-relaxed">
               „При разлучењу душе наше са телом, стаће пред нас, с једне стране, војска и Силе небеске, с друге - власти таме, старешине ваздушних митарстава, изобличитељи наших дела. Угледавши их, душа ће задрхтати и устрептати; и у тој пометености и ужасу она ће тражити себи заштиту у анђела Божијих. Но и примљена од анђела и под њиховим окриљем пролазећи ваздушно пространство и улазећи на висину, она ће наићи на разна митарства која ће јој препречавати пут њен у Царство, заустављати и задржавати њено стремљење ка Царству. На сваком од ових митарстава тражиће се рачуна за посебне грехе... И ако се душа због побожног и богоугодног живота свог покаже достојна награде, узеће је Анђели и она ће неустрашиво полетети к Царству... Ако се пак, напротив, покаже да је она проводила живот у нераду и неуздржавању, онда ће она чути онај страшни глас: Нека се узме безбожник, нека не види славе Господње! (Ис. 26, 10); тада ће је оставити Анђели Божији и узеће је страшни демони, и душа, везана нераздрешивим узама, строваљује се у тамнице пакла."
             </p>
           </div>
 
           {/* Teodora bio */}
           <div className="grid md:grid-cols-2 gap-6 items-start">
-            <div className="relative overflow-hidden">
-              <Image
-                src="/death-of-theodora.jpg"
-                alt="Преп. Теодора Цариградска"
-                width={800}
-                height={600}
-                className="w-full h-auto"
-              />
+            <ZoomableImage
+              src="/death-of-theodora.jpg"
+              alt="Преп. Теодора Цариградска"
+              width={800}
+              height={600}
+              modalWidth={1200}
+              modalHeight={900}
+              mobileOnly
+              className="relative overflow-hidden text-left md:cursor-default"
+              imageClassName="w-full h-auto"
+            >
               <div className="absolute inset-0 bg-gradient-to-t from-[#1A0404]/60 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-4">
                 <p className="text-xs text-white/80 tracking-[0.12em] uppercase">Преп. Теодора Цариградска</p>
               </div>
-            </div>
+            </ZoomableImage>
             <div className="bg-[#FBF7EE] border border-[#6B1A1A]/10 p-6">
               <h3 className="text-xl text-[#6B1A1A] font-serif mb-4">Преп. Теодора Цариградска</h3>
               <p className="text-base text-[#4A3C2A] leading-relaxed mb-4">
@@ -156,7 +163,7 @@ export default function IspovesPage() {
                 Преставила се 30. децембра 940. године.
               </p>
               <hr className="border-t border-[#C9A84C]/30 my-4" />
-              <p className="text-[10px] text-[#6B5C4C] tracking-wider uppercase">
+              <p className="text-xs font-semibold text-[#6B5C4C] tracking-wider uppercase">
                 Пут душе по изласку из тела
               </p>
               <p className="text-xs text-[#6B5C4C] mt-1">
@@ -176,23 +183,17 @@ export default function IspovesPage() {
             Двадесет митарстава, која могу послужити као добро <strong className="text-[#6B1A1A]">упутство за исповест</strong>.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-10 items-start">
-            <div className="relative aspect-[4/3] overflow-hidden">
-              <Image
-                src="/mytarstva.jpg"
-                alt="Митарства"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1A0404]/50 to-transparent"></div>
-            </div>
-            <div className="bg-[#F2EDE3] border border-[#6B1A1A]/10 p-6">
-              <p className="text-[10px] text-[#6B5C4C] tracking-wider uppercase mb-3">Напомена</p>
-              <p className="text-sm text-[#4A3C2A] leading-relaxed">
-                Они који истински исповеде сва своја зла дела, и жале и кају се због учињених зала, њима се греси милосрђем Божијим на невидљив начин бришу. И кад таква душа долази овамо, ваздушни иследници отварају своје књиге, али ништа не налазе записано против ње, и не могу да јој учине никакву пакост, нити да је уплаше, и душа радујући се улази к престолу благодати.
-              </p>
-            </div>
-          </div>
+          <ZoomableImage
+            src="/mytarstva.jpg"
+            alt="Митарства"
+            fill
+            modalWidth={1200}
+            modalHeight={900}
+            className="relative aspect-[4/3] overflow-hidden mb-10 max-w-3xl"
+            imageClassName="object-cover"
+          >
+            <span className="sr-only">Увећај фотографију</span>
+          </ZoomableImage>
 
           <MitarstvaAccordion />
         </section>
@@ -236,7 +237,7 @@ export default function IspovesPage() {
             <span className="text-5xl text-[#C9A84C]/50 font-serif leading-none">V</span>
             <h2 className="text-4xl text-[#6B1A1A] font-serif">Реч о исходу душе праведних и грешних</h2>
           </div>
-          <p className="text-[10px] text-[#6B5C4C] tracking-wider uppercase mb-8">из списа св. Макарија Александријског</p>
+          <p className="text-xs font-semibold text-[#6B5C4C] tracking-wider uppercase mb-8">из списа св. Макарија Александријског</p>
 
           <p className="text-base text-[#4A3C2A] leading-relaxed mb-8">
             Једном Свети Макарије Александриски упита Анђеле који су га пратили по пустињи: „Пошто је од Светих Отаца предато да се у Цркви врши принос Богу за преминулог у трећи, девети и четрдесети дан, каква онда од тога бива корист по душу покојника?" Анђео одговори: „Бог није допустио да ишта непотребно и некорисно бива у Његовој Цркви."
@@ -244,21 +245,21 @@ export default function IspovesPage() {
 
           <div className="grid md:grid-cols-3 gap-4">
             <div className="bg-[#FBF7EE] border border-[#6B1A1A]/10 border-t-4 border-t-[#6B1A1A] p-6">
-              <p className="text-[10px] text-[#6B5C4C] tracking-wider uppercase mb-2">Трећи дан</p>
+              <p className="text-xs font-semibold text-[#6B5C4C] tracking-wider uppercase mb-2">Трећи дан</p>
               <p className="text-3xl text-[#6B1A1A] font-serif mb-4">3.</p>
               <p className="text-sm text-[#4A3C2A] leading-relaxed">
                 Када у трећи дан бива у Цркви принос, онда душа умрлога добија од чувајућег је Анђела олакшање у тузи коју она осећа због разлучења са телом. У трећи дан Онај који је васкрсао из мртвих наређује да се свака хришћанска душа, по угледу на Његово васкрсење, узнесе на небеса ради поклоњења Богу свих. После поклоњења Богу, Бог наређује да се покажу души разна и пријатна насеља Светих и лепота Раја. Све то разгледа душа шест дана.
               </p>
             </div>
             <div className="bg-[#FBF7EE] border border-[#6B1A1A]/10 border-t-4 border-t-[#C9A84C] p-6">
-              <p className="text-[10px] text-[#6B5C4C] tracking-wider uppercase mb-2">Девети дан</p>
+              <p className="text-xs font-semibold text-[#6B5C4C] tracking-wider uppercase mb-2">Девети дан</p>
               <p className="text-3xl text-[#6B1A1A] font-serif mb-4">9.</p>
               <p className="text-sm text-[#4A3C2A] leading-relaxed">
                 А после разгледања у току шест дана свих радости Праведника, Анђели је поново узносе на поклоњење Богу. Стога, добро чини Црква, вршећи у девети дан службе и принос за усопшег. После другог поклоњења, Владика свих наређује одвести душу у пакао и показати јој сва тамошња места мучења, разна одељења пакла, и разноврсна мучења нечестивих.
               </p>
             </div>
             <div className="bg-[#FBF7EE] border border-[#6B1A1A]/10 border-t-4 border-t-[#6B1A1A]/40 p-6">
-              <p className="text-[10px] text-[#6B5C4C] tracking-wider uppercase mb-2">Четрдесети дан</p>
+              <p className="text-xs font-semibold text-[#6B5C4C] tracking-wider uppercase mb-2">Четрдесети дан</p>
               <p className="text-3xl text-[#6B1A1A] font-serif mb-4">40.</p>
               <p className="text-sm text-[#4A3C2A] leading-relaxed">
                 По овим разним местима мука, душа се носи тридесет дана, дршћући, да и сама не буде осуђена на затвор у њима. У четрдесети дан душа се опет узноси на поклоњење Богу; и тада већ Судија одређује души место које одговара њој према њеним делима. Стога Црква поступа правилно, чинећи у четрдесети дан помен за преминуле.
@@ -293,6 +294,24 @@ export default function IspovesPage() {
       </main>
 
       <Footer />
+
+      <a
+        href="/preuzimanja/pomocnik-za-ispovest-mitarstva-blazene-teodore.pdf"
+        download
+        className="fixed bottom-6 left-6 z-50 inline-flex h-12 items-center gap-2 border border-[#C9A84C]/35 bg-[#2C0808]/95 px-3 text-[#F5EDD8] shadow-lg backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#451010] hover:shadow-xl md:h-auto md:gap-3 md:px-4 md:py-3"
+      >
+        <span className="flex h-8 w-8 items-center justify-center border border-[#C9A84C]/40 text-[11px] font-semibold tracking-[0.16em] text-[#C9A84C] md:h-9 md:w-9 md:text-xs">
+          PDF
+        </span>
+        <span className="text-left">
+          <span className="block text-[9px] font-semibold uppercase tracking-[0.16em] text-[#C9A84C] md:text-[10px] md:tracking-[0.18em]">
+            Preuzmi
+          </span>
+          <span className="hidden text-sm font-medium leading-tight md:block">
+            Pomocnik za ispovest
+          </span>
+        </span>
+      </a>
 
       <ScrollToTop />
     </div>
