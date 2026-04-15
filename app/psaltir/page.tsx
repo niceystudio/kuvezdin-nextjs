@@ -10,6 +10,9 @@ export const metadata = {
   title: "O Psaltiru | Manastir Kuvezdin",
   description:
     "Uputstvo za citanje Psaltira, molitvena praksa i citanje za zdravlje i pokoj. Stranica manastira Kuvezdin sa prakticnim smernicama.",
+  alternates: {
+    canonical: "/psaltir",
+  },
 };
 
 const uvodniCitat = [

@@ -12,6 +12,9 @@ export const metadata = {
   title: "Zaduzbinarstvo | Manastir Kuvezdin",
   description:
     "Podrzite obnovu manastira Kuvezdin dobrovoljnim prilogom. Informacije o zaduzbinarstvu, donacijama i nacinima pomoci.",
+  alternates: {
+    canonical: "/zaduzbinarstvo",
+  },
 };
 
 type ContentBlock =

@@ -10,6 +10,9 @@ export const metadata = {
   title: "Galerija | Manastir Kuvezdin",
   description:
     "Fotografije manastira Kuvezdin kroz razlicita istorijska razdoblja, od starih snimaka do savremenog izgleda manastira.",
+  alternates: {
+    canonical: "/galerija",
+  },
 };
 
 const galleryPeriods = [

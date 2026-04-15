@@ -7,6 +7,9 @@ export const metadata = {
   title: "Manastir Kuvezdin | Raspored bogosluzenja, istorijat, galerija",
   description:
     "Manastir Kuvezdin na Fruskoj gori: raspored bogosluzenja, istorijat, galerija, duhovni sadrzaji i mogucnosti za podrsku obnovi manastira.",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function Home() {

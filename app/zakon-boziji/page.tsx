@@ -11,6 +11,9 @@ export const metadata = {
   title: "Zakon Boziji | Manastir Kuvezdin",
   description:
     "Predgovor, sadrzaj i fotografije knjige Zakon Boziji, uz mogucnost preuzimanja. Duhovno i poucno stivo na sajtu manastira Kuvezdin.",
+  alternates: {
+    canonical: "/zakon-boziji",
+  },
 };
 
 type ContentBlock =

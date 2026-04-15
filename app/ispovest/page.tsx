@@ -11,6 +11,9 @@ export const metadata = {
   title: "O ispovesti | Manastir Kuvezdin",
   description:
     "O Svetoj tajni ispovesti, mitarstvima i duhovnoj pripremi za pokajanje. Pomocnik za ispovest i pouka za vernike manastira Kuvezdin.",
+  alternates: {
+    canonical: "/ispovest",
+  },
 };
 
 export default function IspovesPage() {

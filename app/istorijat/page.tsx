@@ -14,6 +14,9 @@ export const metadata = {
   title: "Istorija manastira | Manastir Kuvezdin",
   description:
     "Istorija manastira Kuvezdin od osnivanja u 16. veku, preko stradanja i obnove, do savremenog zivota ove fruskogorske svetinje.",
+  alternates: {
+    canonical: "/istorijat",
+  },
 };
 
 type Paragraph =

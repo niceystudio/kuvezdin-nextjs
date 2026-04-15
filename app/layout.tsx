@@ -9,6 +9,10 @@ const monahOCS = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://manastirkuvezdin.rs"),
+  alternates: {
+    canonical: "/",
+  },
   title: "Манастир Кувеждин | Српска Православна Црква",
   description: "Информативна страница Манастира Кувеждин, Епархије Сремске, Српске Православне Цркве.",
   icons: {
