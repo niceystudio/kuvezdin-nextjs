@@ -26,6 +26,14 @@ type Section = {
 
 type HistoryImage = HistoryImageCard;
 
+const introPeriods = new Map<number, { label: string; title: string }>([
+  [0, { label: "XVI век", title: "Оснивање и први записи" }],
+  [3, { label: "XVII-XVIII век", title: "Обнова, пресељења и спорови" }],
+  [7, { label: "XVIII-XIX век", title: "Градитељски и духовни успон" }],
+  [13, { label: "XIX-XX век", title: "Културни значај и манастирски живот" }],
+  [15, { label: "XX-XXI век", title: "Страдање и обнова манастира" }],
+]);
+
 const imageCatalog: Record<number, HistoryImage> = {
   1: {
     src: "/istorijat/1.jpg",
@@ -51,6 +59,7 @@ const imageCatalog: Record<number, HistoryImage> = {
   },
   5: {
     src: "/istorijat/5.JPG",
+    imageFit: "contain",
     caption: "ИКОНОСТАС 1853. ГОДИНА",
     alt: "Иконостас 1853. година",
   },
@@ -291,7 +300,13 @@ function renderParagraph(paragraph: Paragraph, key: string) {
 }
 
 function renderImageGroup(ids: number[], key: string) {
-  const images = ids.map((id) => imageCatalog[id]).filter(Boolean);
+  const images = ids
+    .map((id) => imageCatalog[id])
+    .filter(Boolean)
+    .map((image) => ({
+      ...image,
+      imageFit: "contain" as const,
+    }));
 
   if (images.length === 0) {
     return null;
@@ -374,7 +389,7 @@ export default async function IstorijatPage() {
             Историјат
           </p>
           <h1 className="font-serif text-[#F5EDD8]">
-            {introSection?.heading ?? "Историја"}
+            Историја манастира
           </h1>
         </div>
       </section>
@@ -384,9 +399,26 @@ export default async function IstorijatPage() {
           <section className="border-b border-[#6B1A1A]/15 pb-16">
             <div className="space-y-5">
               {introParagraphs.flatMap(({ paragraph, globalIndex, key }) => {
-                const nodes = [
-                  renderParagraph(paragraph, key),
-                ];
+                const nodes = [];
+                const period = introPeriods.get(globalIndex);
+
+                if (period) {
+                  nodes.push(
+                    <div
+                      key={`period-${globalIndex}`}
+                      className="mt-8 border-t border-[#C9A84C]/30 pt-8 first:mt-0 first:border-t-0 first:pt-0"
+                    >
+                      <p className="mb-2 text-xs font-semibold tracking-[0.18em] text-[#8D6A2B] uppercase">
+                        {period.label}
+                      </p>
+                      <h2 className="font-serif text-3xl text-[#6B1A1A]">
+                        {period.title}
+                      </h2>
+                    </div>,
+                  );
+                }
+
+                nodes.push(renderParagraph(paragraph, key));
                 const group = imageGroups.get(globalIndex);
                 if (group) {
                   nodes.push(renderImageGroup(group, `images-${globalIndex}`)!);
