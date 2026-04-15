@@ -126,10 +126,7 @@ export default function GalleryBrowser({ sections }: GalleryBrowserProps) {
               id={section.id}
               className="scroll-mt-28 border-b border-[#6B1A1A]/10 pb-14 last:border-b-0"
             >
-              <div className="mb-8 flex items-baseline gap-4">
-                <span className="font-serif text-5xl leading-none text-[#C9A84C]/50">
-                  {section.title.match(/^\d/) ? section.title.slice(0, 4) : "I"}
-                </span>
+              <div className="mb-8">
                 <div>
                   <h2 className="font-serif text-4xl text-[#6B1A1A]">
                     {section.title}
