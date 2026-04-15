@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
@@ -83,7 +83,6 @@ export default async function ZaduzbinarstvoPage() {
   );
 
   const pageTitle = headings[0]?.text ?? "Задужбинарство";
-  const subtitle = headings[1]?.text ?? "(донације)";
   const intro = paragraphs[1]?.text ?? "";
   const accountNumber = "205-507773-57";
 
@@ -107,15 +106,10 @@ export default async function ZaduzbinarstvoPage() {
             <RussianOrthodoxCross size={24} />
             <div className="h-px w-8 bg-[#C9A84C]" />
           </div>
-          <p className="mb-4 text-[10px] tracking-[0.25em] text-[#C9A84C] uppercase">
-            Задужбинарство
-          </p>
+          <p className="mb-4 text-[10px] tracking-[0.25em] text-[#C9A84C] uppercase">Донације</p>
           <h1 className="font-serif text-[#F5EDD8]">
             {pageTitle}
           </h1>
-          <p className="mt-4 font-serif text-2xl italic text-[#F5EDD8]/80">
-            {subtitle}
-          </p>
         </div>
       </section>
 
@@ -156,3 +150,5 @@ export default async function ZaduzbinarstvoPage() {
     </div>
   );
 }
+
+
