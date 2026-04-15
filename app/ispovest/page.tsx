@@ -5,6 +5,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import MitarstvaAccordion from "./MitarstvaAccordion";
 import ZoomableImage from "./ZoomableImage";
 import Footer from "@/components/Footer";
+import PdfDownloadButton from "@/components/PdfDownloadButton";
 
 export const metadata = {
   title: "O ispovesti | Manastir Kuvezdin",
@@ -296,23 +297,11 @@ export default function IspovesPage() {
 
       <Footer />
 
-      <a
+      <PdfDownloadButton
         href="/preuzimanja/pomocnik-za-ispovest-mitarstva-blazene-teodore.pdf"
-        download
-        className="fixed bottom-6 left-6 z-50 inline-flex h-12 items-center gap-2 border border-[#C9A84C]/35 bg-[#2C0808]/95 px-3 text-[#F5EDD8] shadow-lg backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#451010] hover:shadow-xl md:h-auto md:gap-3 md:px-4 md:py-3"
-      >
-        <span className="flex h-8 w-8 items-center justify-center border border-[#C9A84C]/40 text-[11px] font-semibold tracking-[0.16em] text-[#C9A84C] md:h-9 md:w-9 md:text-xs">
-          ПДФ
-        </span>
-        <span className="text-left">
-          <span className="block text-[9px] font-semibold uppercase tracking-[0.16em] text-[#C9A84C] md:text-[10px] md:tracking-[0.18em]">
-            Преузми
-          </span>
-          <span className="hidden text-sm font-medium leading-tight md:block">
-            Помоћник за исповест
-          </span>
-        </span>
-      </a>
+        label="Преузми"
+        title="Помоћник за исповест"
+      />
 
       <ScrollToTop />
     </div>
