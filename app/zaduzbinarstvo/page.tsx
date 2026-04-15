@@ -9,9 +9,9 @@ import ScrollToTop from "@/components/ScrollToTop";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Задужбинарство | Манастир Кувеждин",
+  title: "Zaduzbinarstvo | Manastir Kuvezdin",
   description:
-    "Позив на задужбинарство и добровољне прилоге за обнову манастира Кувеждин.",
+    "Podrzite obnovu manastira Kuvezdin dobrovoljnim prilogom. Informacije o zaduzbinarstvu, donacijama i nacinima pomoci.",
 };
 
 type ContentBlock =

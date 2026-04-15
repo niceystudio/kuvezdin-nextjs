@@ -3,6 +3,12 @@ import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import CopyButton from "@/components/CopyButton";
 
+export const metadata = {
+  title: "Manastir Kuvezdin | Raspored bogosluzenja, istorijat, galerija",
+  description:
+    "Manastir Kuvezdin na Fruskoj gori: raspored bogosluzenja, istorijat, galerija, duhovni sadrzaji i mogucnosti za podrsku obnovi manastira.",
+};
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#FAF7F2]">

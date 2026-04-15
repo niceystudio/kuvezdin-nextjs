@@ -6,8 +6,9 @@ import ScrollToTop from "@/components/ScrollToTop";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "О Псалтиру | Манастир Кувеждин",
-  description: "Упутство за читање псалтира.",
+  title: "O Psaltiru | Manastir Kuvezdin",
+  description:
+    "Uputstvo za citanje Psaltira, molitvena praksa i citanje za zdravlje i pokoj. Stranica manastira Kuvezdin sa prakticnim smernicama.",
 };
 
 const uvodniCitat = [

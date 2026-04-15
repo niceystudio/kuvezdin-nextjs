@@ -1,7 +1,7 @@
 import RussianOrthodoxCross from "@/components/RussianOrthodoxCross";
 
 export const metadata = {
-  title: "UI Kit | Кувеждин Design System",
+  title: "UI Kit | Kuvezdin Design System",
   robots: { index: false, follow: false },
 };
 

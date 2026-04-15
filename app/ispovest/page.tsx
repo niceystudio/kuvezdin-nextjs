@@ -7,8 +7,9 @@ import ZoomableImage from "./ZoomableImage";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "О исповести | Манастир Кувеждин",
-  description: "Света тајна покајања - о исповести, митарствима и путу душе. Манастир Кувеждин, Епархија Сремска.",
+  title: "O ispovesti | Manastir Kuvezdin",
+  description:
+    "O Svetoj tajni ispovesti, mitarstvima i duhovnoj pripremi za pokajanje. Pomocnik za ispovest i pouka za vernike manastira Kuvezdin.",
 };
 
 export default function IspovesPage() {

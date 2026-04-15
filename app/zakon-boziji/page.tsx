@@ -7,8 +7,9 @@ import ScrollToTop from "@/components/ScrollToTop";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Закон Божији | Манастир Кувеждин",
-  description: "Предговор и преглед књиге Закон Божији.",
+  title: "Zakon Boziji | Manastir Kuvezdin",
+  description:
+    "Predgovor, sadrzaj i fotografije knjige Zakon Boziji, uz mogucnost preuzimanja. Duhovno i poucno stivo na sajtu manastira Kuvezdin.",
 };
 
 type ContentBlock =

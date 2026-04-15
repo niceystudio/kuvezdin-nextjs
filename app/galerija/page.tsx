@@ -7,8 +7,9 @@ import ScrollToTop from "@/components/ScrollToTop";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Галерија | Манастир Кувеждин",
-  description: "Фотографије манастира Кувеждин кроз временска раздобља.",
+  title: "Galerija | Manastir Kuvezdin",
+  description:
+    "Fotografije manastira Kuvezdin kroz razlicita istorijska razdoblja, od starih snimaka do savremenog izgleda manastira.",
 };
 
 const galleryPeriods = [
