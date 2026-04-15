@@ -11,9 +11,9 @@ import ScrollToTop from "@/components/ScrollToTop";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Istorija manastira | Manastir Kuvezdin",
+  title: "Istorija manastira | Manastir Kuveždin",
   description:
-    "Istorija manastira Kuvezdin od osnivanja u 16. veku, preko stradanja i obnove, do savremenog zivota ove fruskogorske svetinje.",
+    "Istorija manastira Kuveždin od osnivanja u 16. veku, preko stradanja i obnove, do savremenog života ove fruškogorske svetinje.",
   alternates: {
     canonical: "/istorijat",
   },

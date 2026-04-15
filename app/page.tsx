@@ -4,9 +4,9 @@ import ScrollToTop from "@/components/ScrollToTop";
 import CopyButton from "@/components/CopyButton";
 
 export const metadata = {
-  title: "Manastir Kuvezdin | Raspored bogosluzenja, istorijat, galerija",
+  title: "Manastir Kuveždin | Raspored bogosluženja, istorijat, galerija",
   description:
-    "Manastir Kuvezdin na Fruskoj gori: raspored bogosluzenja, istorijat, galerija, duhovni sadrzaji i mogucnosti za podrsku obnovi manastira.",
+    "Manastir Kuveždin na Fruškoj gori: raspored bogosluženja, istorijat, galerija, duhovni sadržaji i mogućnosti za podršku obnovi manastira.",
   alternates: {
     canonical: "/",
   },

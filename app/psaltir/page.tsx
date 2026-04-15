@@ -7,9 +7,9 @@ import Footer from "@/components/Footer";
 import PdfDownloadButton from "@/components/PdfDownloadButton";
 
 export const metadata = {
-  title: "O Psaltiru | Manastir Kuvezdin",
+  title: "O Psaltiru | Manastir Kuveždin",
   description:
-    "Uputstvo za citanje Psaltira, molitvena praksa i citanje za zdravlje i pokoj. Stranica manastira Kuvezdin sa prakticnim smernicama.",
+    "Uputstvo za čitanje Psaltira, molitvena praksa i čitanje za zdravlje i pokoj. Stranica manastira Kuveždin sa praktičnim smernicama.",
   alternates: {
     canonical: "/psaltir",
   },

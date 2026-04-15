@@ -7,9 +7,9 @@ import ScrollToTop from "@/components/ScrollToTop";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Galerija | Manastir Kuvezdin",
+  title: "Galerija | Manastir Kuveždin",
   description:
-    "Fotografije manastira Kuvezdin kroz razlicita istorijska razdoblja, od starih snimaka do savremenog izgleda manastira.",
+    "Fotografije manastira Kuveždin kroz različita istorijska razdoblja, od starih snimaka do savremenog izgleda manastira.",
   alternates: {
     canonical: "/galerija",
   },

@@ -8,9 +8,9 @@ import Footer from "@/components/Footer";
 import PdfDownloadButton from "@/components/PdfDownloadButton";
 
 export const metadata = {
-  title: "Zakon Boziji | Manastir Kuvezdin",
+  title: "Zakon Božiji | Manastir Kuveždin",
   description:
-    "Predgovor, sadrzaj i fotografije knjige Zakon Boziji, uz mogucnost preuzimanja. Duhovno i poucno stivo na sajtu manastira Kuvezdin.",
+    "Predgovor, sadržaj i fotografije knjige Zakon Božiji, uz mogućnost preuzimanja. Duhovno i poučno štivo na sajtu manastira Kuveždin.",
   alternates: {
     canonical: "/zakon-boziji",
   },

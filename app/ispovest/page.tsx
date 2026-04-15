@@ -8,9 +8,9 @@ import Footer from "@/components/Footer";
 import PdfDownloadButton from "@/components/PdfDownloadButton";
 
 export const metadata = {
-  title: "O ispovesti | Manastir Kuvezdin",
+  title: "O ispovesti | Manastir Kuveždin",
   description:
-    "O Svetoj tajni ispovesti, mitarstvima i duhovnoj pripremi za pokajanje. Pomocnik za ispovest i pouka za vernike manastira Kuvezdin.",
+    "O Svetoj tajni ispovesti, mitarstvima i duhovnoj pripremi za pokajanje. Pomoćnik za ispovest i pouka za vernike manastira Kuveždin.",
   alternates: {
     canonical: "/ispovest",
   },

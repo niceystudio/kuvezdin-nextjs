@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Agentation } from "agentation";
@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  title: "Манастир Кувеждин | Српска Православна Црква",
-  description: "Информативна страница Манастира Кувеждин, Епархије Сремске, Српске Православне Цркве.",
+  title: "Manastir Kuveždin | Srpska pravoslavna crkva",
+  description: "Informativna stranica manastira Kuveždin, Eparhije sremske, Srpske pravoslavne crkve.",
   icons: {
     icon: "/favicon.ico",
   },
@@ -34,3 +34,4 @@ export default function RootLayout({
     </html>
   );
 }
+

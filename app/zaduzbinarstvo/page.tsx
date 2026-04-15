@@ -9,9 +9,9 @@ import ScrollToTop from "@/components/ScrollToTop";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Zaduzbinarstvo | Manastir Kuvezdin",
+  title: "Zadužbinarstvo | Manastir Kuveždin",
   description:
-    "Podrzite obnovu manastira Kuvezdin dobrovoljnim prilogom. Informacije o zaduzbinarstvu, donacijama i nacinima pomoci.",
+    "Podržite obnovu manastira Kuveždin dobrovoljnim prilogom. Informacije o zadužbinarstvu, donacijama i načinima pomoći.",
   alternates: {
     canonical: "/zaduzbinarstvo",
   },
