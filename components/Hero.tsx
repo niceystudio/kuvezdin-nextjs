@@ -8,7 +8,74 @@ export default function Hero() {
     <>
       <SiteNav />
 
-      <section className="grid min-h-[70vh] md:max-h-[750px] md:grid-cols-2">
+      <section id="pocetna" className="md:hidden">
+        <div className="relative flex min-h-[calc(100svh-4rem)] items-end overflow-hidden bg-[#2C0808] px-5 pb-8 pt-12">
+          <Image
+            src="/P1010068.webp"
+            alt="Манастир Кувеждин"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#140404]/35 via-[#140404]/20 to-[#140404]/88" />
+          <div
+            className="pointer-events-none absolute inset-x-0 top-0 h-full opacity-[0.08]"
+            style={{
+              backgroundImage: "url(/ornament-2.svg)",
+              backgroundRepeat: "repeat-x",
+              backgroundSize: "auto 100%",
+              backgroundPosition: "center top",
+            }}
+          />
+
+          <div className="relative z-10 w-full">
+            <div className="mb-5 flex items-center gap-3 text-[#C9A84C]">
+              <div className="h-px w-7 bg-current" />
+              <RussianOrthodoxCross size={20} />
+              <div className="h-px w-7 bg-current" />
+            </div>
+
+            <h1 className="mb-4 font-serif text-[#F5EDD8]">
+              Манастир
+              <br />
+              Кувеждин
+            </h1>
+
+            <div className="mb-5 h-px w-full max-w-[220px] bg-[#C9A84C]/40" />
+
+            <p className="max-w-md text-base leading-relaxed text-[#F5EDD8]/92">
+              Драга браћо и сестре, овде се налазе информације о распореду
+              богослужења и упутства за оне који желе да присуствују молитвама
+              у нашој светој обитељи.
+            </p>
+
+            <div className="mt-6 flex justify-center">
+              <span
+                aria-hidden="true"
+                className="scroll-hint inline-flex items-center justify-center text-[#F5EDD8]/60"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4 6.5L8 10.5L12 6.5"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="hidden min-h-[70vh] md:grid md:max-h-[750px] md:grid-cols-2">
         <div className="relative flex flex-col justify-center overflow-hidden bg-[#F5EDD8] px-8 py-16 md:px-12 lg:px-16">
           <div
             className="pointer-events-none absolute inset-0 opacity-[0.06]"

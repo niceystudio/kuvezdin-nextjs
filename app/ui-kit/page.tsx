@@ -6,29 +6,29 @@ export const metadata = {
 };
 
 // ─── Token data ───────────────────────────────────────────────────────────────
-// These arrays are the source of truth — they mirror globals.css @theme and
+// These arrays are the source of truth - they mirror globals.css @theme and
 // @layer components. When you change a token or class there, update here too.
 
 const palette = [
   {
-    group: "Акценат — злато",
+    group: "Акценат - злато",
     swatches: [
-      { name: "Gold Primary",  hex: "#C9A84C", token: "--color-gold",        on: "#1A1209", label: "Примарни злато — CTA, активни елементи, иконе" },
+      { name: "Gold Primary",  hex: "#C9A84C", token: "--color-gold",        on: "#1A1209", label: "Примарни злато - CTA, активни елементи, иконе" },
       { name: "Gold Hover",    hex: "#E8C96A", token: "--color-gold-hover",   on: "#1A1209", label: "Hover стање злато дугмади" },
       { name: "Gold Brown",    hex: "#8D6A2B", token: "--color-gold-brown",   on: "#F5EDD8", label: "Терцијарни текст, мали натписи" },
     ],
   },
   {
-    group: "Примарна — бордо",
+    group: "Примарна - бордо",
     swatches: [
       { name: "Burgundy Dark",    hex: "#6B1A1A", token: "--color-primary",  on: "#F5EDD8", label: "Наслови, тамни текст, акцентни бордо" },
-      { name: "Burgundy Nav",     hex: "#4A0E0E", token: "--color-nav",      on: "#F5EDD8", label: "Навигација — позадина" },
+      { name: "Burgundy Nav",     hex: "#4A0E0E", token: "--color-nav",      on: "#F5EDD8", label: "Навигација - позадина" },
       { name: "Burgundy Footer",  hex: "#2C0808", token: "--color-dark",     on: "#F5EDD8", label: "Подножје, тамне секције" },
       { name: "Burgundy Overlay", hex: "#1A0404", token: "--color-overlay",  on: "#F5EDD8", label: "Градијент преклоп на сликама" },
     ],
   },
   {
-    group: "Позадине — топле нијансе",
+    group: "Позадине - топле нијансе",
     swatches: [
       { name: "Page BG",    hex: "#FAF7F2", token: "--color-bg",             on: "#4A3C2A", label: "Главна позадина странице" },
       { name: "Card BG",    hex: "#FBF7EE", token: "--color-surface",        on: "#4A3C2A", label: "Позадина картица и оквира" },
@@ -49,10 +49,10 @@ const palette = [
 ];
 
 const typeScale = [
-  { label: "text-[10px] tracking-[0.25em] uppercase", size: "10px", sample: "Света тајна · О Псалтиру · Галерија", note: "Микро натпис — секцијска ознака" },
-  { label: "text-xs tracking-[0.15em] uppercase",     size: "12px", sample: "Српска Православна Црква",             note: "Мали натпис — навигација, лого" },
-  { label: "text-sm tracking-wide uppercase",          size: "14px", sample: "О исповести · Историјат",              note: "Навигациони линк" },
-  { label: "text-sm leading-relaxed",                  size: "14px", sample: "Помоћник за исповест и митарства",     note: "Мали текст тела" },
+  { label: "text-[10px] tracking-[0.25em] uppercase", size: "10px", sample: "Света тајна · О Псалтиру · Галерија", note: "Микро натпис - секцијска ознака" },
+  { label: "text-xs tracking-[0.15em] uppercase",     size: "12px", sample: "Српска Православна Црква",             note: "Мали натпис - навигација, лого" },
+  { label: "text-sm tracking-wide uppercase",         size: "14px", sample: "О исповести · Историјат",              note: "Навигациони линк" },
+  { label: "text-sm leading-relaxed",                 size: "14px", sample: "Помоћник за исповест и митарства",     note: "Мали текст тела" },
   { label: "text-base leading-relaxed",                size: "16px", sample: "Православно крштени верници, уредно обучени.", note: "Тело текста" },
   { label: "text-xl font-serif",                       size: "20px", sample: "За добијање опроштаја грехова",        note: "Поднаслов / h3" },
   { label: "text-4xl font-serif",                      size: "36px", sample: "Основно о Светој тајни",               note: "Наслов секције / h2" },
@@ -62,7 +62,7 @@ const typeScale = [
 // CSS component classes defined in globals.css @layer components
 const buttons = [
   {
-    label: "Primary — Gold",
+    label: "Primary - Gold",
     desc: "Главна акција. Увек злато, увек uppercase.",
     cssClass: "btn-primary",
     text: "Задужбинарство",
@@ -74,7 +74,7 @@ const buttons = [
     text: "Преузми",
   },
   {
-    label: "Secondary — Outlined",
+    label: "Secondary - Outlined",
     desc: "Секундарна акција поред примарне.",
     cssClass: "btn-secondary",
     text: "Историјат",
@@ -84,11 +84,11 @@ const buttons = [
 // CSS component classes for surfaces
 const surfaces = [
   { name: "Card Default",        cssClass: "card",                desc: "Стандардна картица" },
-  { name: "Card Accent Primary", cssClass: "card-accent-primary", desc: "Картица са горњим акцентом — бордо" },
-  { name: "Card Accent Gold",    cssClass: "card-accent-gold",    desc: "Картица са горњим акцентом — злато" },
+  { name: "Card Accent Primary", cssClass: "card-accent-primary", desc: "Картица са горњим акцентом - бордо" },
+  { name: "Card Accent Gold",    cssClass: "card-accent-gold",    desc: "Картица са горњим акцентом - злато" },
   { name: "Blockquote",          cssClass: "blockquote",          desc: "Информациони блок / цитат" },
-  { name: "Callout Primary",     cssClass: "callout-primary",     desc: "Блок са левим акцентом — важна напомена" },
-  { name: "Callout Gold",        cssClass: "callout-gold",        desc: "Блок са левим акцентом — цитат" },
+  { name: "Callout Primary",     cssClass: "callout-primary",     desc: "Блок са левим акцентом - важна напомена" },
+  { name: "Callout Gold",        cssClass: "callout-gold",        desc: "Блок са левим акцентом - цитат" },
 ];
 
 const spacing = [
@@ -166,12 +166,12 @@ export default function UiKitPage() {
 
           <div className="mb-10 grid sm:grid-cols-2 gap-6">
             <div className="card">
-              <p className="eyebrow-muted mb-4">font-serif (MonahOCS — само h1)</p>
+              <p className="eyebrow-muted mb-4">font-serif (MonahOCS - само h1)</p>
               <h1 className="text-primary mb-2" style={{ fontSize: "2rem" }}>Аа Бб Вв Гг</h1>
-              <p className="text-xs text-muted mt-3">Само h1 наслови — MonahOCS.otf</p>
+              <p className="text-xs text-muted mt-3">Само h1 наслови - MonahOCS.otf</p>
             </div>
             <div className="card">
-              <p className="eyebrow-muted mb-4">font-serif (системски serif — h2, h3, декорација)</p>
+              <p className="eyebrow-muted mb-4">font-serif (системски serif - h2, h3, декорација)</p>
               <p className="font-serif text-4xl text-primary leading-none mb-2">Аа Бб Вв Гг</p>
               <p className="font-serif text-xl text-body">Православни · Хришћански</p>
               <p className="text-xs text-muted mt-3">h2, h3, наслови секција, декоративни бројеви</p>
@@ -252,7 +252,7 @@ export default function UiKitPage() {
           <div className="space-y-8 card p-8">
 
             <div>
-              <p className="eyebrow-muted mb-4">Крст + линије — херо орнамент</p>
+              <p className="eyebrow-muted mb-4">Крст + линије - херо орнамент</p>
               <div className="flex items-center gap-3">
                 <div className="h-px w-8 bg-gold" />
                 <RussianOrthodoxCross size={24} />
@@ -285,14 +285,14 @@ export default function UiKitPage() {
             </div>
 
             <div>
-              <p className="eyebrow-muted mb-4">Бордер са леве стране — натпис секције</p>
+              <p className="eyebrow-muted mb-4">Бордер са леве стране - натпис секције</p>
               <div className="border-l border-gold/30 pl-5">
                 <p className="eyebrow-muted">Раздобља</p>
               </div>
             </div>
 
             <div>
-              <p className="eyebrow-muted mb-4">Декоративни маркер листе ✦ — <span className="font-mono">.list-item-ornament</span></p>
+              <p className="eyebrow-muted mb-4">Декоративни маркер листе ✦ - <span className="font-mono">.list-item-ornament</span></p>
               <ul className="space-y-2">
                 {["Прва ставка листе", "Друга ставка листе", "Трећа ставка листе"].map((item) => (
                   <li key={item} className="list-item-ornament">{item}</li>
@@ -337,7 +337,7 @@ export default function UiKitPage() {
           <SectionHeading number="VII" title="Иконе и SVG" />
 
           <div className="card p-8">
-            <p className="eyebrow-muted mb-6">RussianOrthodoxCross — <span className="font-mono">size</span> проп</p>
+            <p className="eyebrow-muted mb-6">RussianOrthodoxCross - <span className="font-mono">size</span> проп</p>
             <div className="flex items-end gap-8 flex-wrap">
               {[16, 20, 24, 32, 48].map((size) => (
                 <div key={size} className="flex flex-col items-center gap-2">
@@ -377,7 +377,7 @@ export default function UiKitPage() {
           <div className="space-y-6">
             {/* Nav example */}
             <div>
-              <p className="eyebrow-muted mb-3">Навигација — десктоп</p>
+              <p className="eyebrow-muted mb-3">Навигација - десктоп</p>
               <div className="border-b border-gold/20 bg-nav px-6">
                 <div className="flex h-20 items-center justify-between">
                   <div className="flex items-center gap-3">

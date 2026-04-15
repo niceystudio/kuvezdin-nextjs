@@ -10,7 +10,7 @@
   --color-gold-hover:     #E8C96A;  /* Gold hover */
   --color-gold-brown:     #8D6A2B;  /* Section labels, tertiary text */
 
-  /* Primary brand — burgundy */
+  /* Primary brand - burgundy */
   --color-primary:        #6B1A1A;  /* Headings, borders, accents */
   --color-nav:            #4A0E0E;  /* Navigation background */
   --color-dark:           #2C0808;  /* Hero sections, footer */
@@ -157,6 +157,22 @@ h1 {
     top: 0.5rem;
     font-size: 7px;
     color: var(--color-gold);
+  }
+
+  .scroll-hint {
+    animation: scroll-hint-pulse 1.8s ease-in-out infinite;
+  }
+}
+
+@keyframes scroll-hint-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.85;
+    transform: translateY(4px);
   }
 }
 

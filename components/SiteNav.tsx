@@ -25,8 +25,8 @@ export default function SiteNav() {
   return (
     <>
       <nav className="sticky top-0 z-40 border-b border-[#C9A84C]/20 bg-[#4A0E0E]">
-        <div className="container mx-auto px-6">
-          <div className="flex h-20 items-center justify-between">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="flex h-16 items-center justify-between sm:h-20">
             {/* Logo */}
             <a href={homeHref} className="flex items-center gap-3">
               <Image
@@ -34,9 +34,9 @@ export default function SiteNav() {
                 alt="Српска Православна Црква"
                 width={56}
                 height={56}
-                className="h-14 w-auto object-contain"
+                className="h-10 w-auto object-contain sm:h-14"
               />
-              <div className="border-l border-[#C9A84C]/30 py-2 pl-3">
+              <div className="border-l border-[#C9A84C]/30 py-1.5 pl-3 sm:py-2">
                 <p className="text-xs leading-tight tracking-[0.15em] text-[#F5EDD8] uppercase">
                   Српска Православна Црква
                 </p>
@@ -98,7 +98,7 @@ export default function SiteNav() {
           />
           <div className="fixed top-0 right-0 bottom-0 z-50 w-[280px] overflow-y-auto bg-[#4A0E0E] shadow-2xl lg:hidden">
             <div className="flex items-center justify-between border-b border-[#C9A84C]/20 p-6">
-              <span className="text-sm tracking-wider text-[#C9A84C] uppercase">Мени</span>
+              <span className="text-base tracking-wider text-[#C9A84C] uppercase">Мени</span>
               <button
                 type="button"
                 className="flex h-8 w-8 items-center justify-center text-[#F5EDD8] transition-colors hover:text-[#C9A84C]"

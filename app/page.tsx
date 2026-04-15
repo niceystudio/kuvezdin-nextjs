@@ -43,7 +43,7 @@ export default function Home() {
                 </div>
                 <div className="flex justify-between items-baseline pb-3 border-b border-[#6B1A1A]/10">
                   <span className="text-sm text-[#4A3C2A]">Јелеосвећења нема</span>
-                  <span className="text-xl text-[#6B1A1A] font-serif">—</span>
+                  <span className="text-xl text-[#6B1A1A] font-serif">-</span>
                 </div>
                 <div className="flex justify-between items-baseline">
                   <span className="text-sm text-[#4A3C2A]">Вечерња служба</span>
@@ -73,15 +73,15 @@ export default function Home() {
             <ul className="space-y-3">
               <li className="pl-6 relative text-base text-[#4A3C2A] leading-relaxed border-b border-[#6B1A1A]/8 pb-3">
                 <span className="absolute left-0 top-2 text-[7px] text-[#C9A84C]">✦</span>
-                <strong className="text-[#6B1A1A]">Живих</strong> — православно крштених сродника. Папирић треба да овери потписом неко од манастирске браће. Помињање траје минимум 40 дана на проскомидији.
+                <strong className="text-[#6B1A1A]">Живих</strong> - православно крштених сродника. Папирић треба да овери потписом неко од манастирске браће. Помињање траје минимум 40 дана на проскомидији.
               </li>
               <li className="pl-6 relative text-base text-[#4A3C2A] leading-relaxed pb-3">
                 <span className="absolute left-0 top-2 text-[7px] text-[#C9A84C]">✦</span>
-                <strong className="text-[#6B1A1A]">Упокојених</strong> — уколико су имали православно опело. Не примамо на молитву имена особа које нису биле православно крштене, самоубица, нити особа кремираних по сопственој вољи. Помињање траје минимум 40 дана на проскомидији и парастосу.
+                <strong className="text-[#6B1A1A]">Упокојених</strong> - уколико су имали православно опело. Не примамо на молитву имена особа које нису биле православно крштене, самоубица, нити особа кремираних по сопственој вољи. Помињање траје минимум 40 дана на проскомидији и парастосу.
               </li>
             </ul>
             <div className="mt-4 p-3 bg-[#6B1A1A]/5 border-l-4 border-[#6B1A1A] text-sm text-[#4A3C2A]">
-              Ценовник не постоји — можете оставити добровољни прилог.
+              Ценовник не постоји - можете оставити добровољни прилог.
             </div>
           </div>
         </section>
@@ -96,7 +96,7 @@ export default function Home() {
           <div className="mb-6">
             <h3 className="text-xl text-[#6B1A1A] font-serif mb-3">Ко може да присуствује?</h3>
             <p className="text-base text-[#4A3C2A] leading-relaxed mb-3">
-              Православно крштене особе <span className="text-[#6B1A1A] font-semibold border-b-2 border-[#C9A84C]/50 pb-0.5">са крстом око врата</span>, које посте <span className="text-[#6B1A1A] font-semibold border-b-2 border-[#C9A84C]/50 pb-0.5">сва четири поста</span> у току године: Васкршњи, Петровски, Великогоспојински и Божићни пост, као и <span className="text-[#6B1A1A] font-semibold border-b-2 border-[#C9A84C]/50 pb-0.5">среду и петак</span> у свим седмицама у току године (изузетак су тзв. трапаве седмице).
+              Православно крштене особе <span className="text-[#6B1A1A] font-semibold">са крстом око врата</span>, које посте <span className="text-[#6B1A1A] font-semibold">сва четири поста</span> у току године: Васкршњи, Петровски, Великогоспојински и Божићни пост, као и <span className="text-[#6B1A1A] font-semibold">среду и петак</span> у свим недељама у току године (изузетак су тзв. трапаве недеље).
             </p>
             <p className="text-base text-[#4A3C2A] leading-relaxed">
               Они који не посте могу присуствовати, али ће бити помазивани тек после периода од 40 дана у ком су постили у складу са календаром СПЦ.
@@ -108,19 +108,19 @@ export default function Home() {
             <ul className="space-y-3">
               <li className="pl-6 relative text-base text-[#4A3C2A] leading-relaxed border-b border-[#6B1A1A]/8 pb-3">
                 <span className="absolute left-0 top-2 text-[7px] text-[#C9A84C]">✦</span>
-                <strong className="text-[#6B1A1A]">Пушачи</strong> — не помазујемо на светој тајни јелеосвећења, већ после 10 дана од момента потпуног остављања дувана, уз услов поста у складу са календаром СПЦ.
+                <strong className="text-[#6B1A1A]">Пушаче</strong> - не помазујемо на светој тајни јелеосвећења, већ после 10 дана од момента потпуног остављања дувана, уз услов поста у складу са календаром СПЦ.
               </li>
               <li className="pl-6 relative text-base text-[#4A3C2A] leading-relaxed border-b border-[#6B1A1A]/8 pb-3">
                 <span className="absolute left-0 top-2 text-[7px] text-[#C9A84C]">✦</span>
-                <strong className="text-[#6B1A1A]">Деца до 10 година</strong> — која су болесна или имају сметње у развоју могу присуствовати уколико родитељи посте у складу са календаром СПЦ.
+                <strong className="text-[#6B1A1A]">Деца до 10 година</strong> - која су болесна или имају сметње у развоју могу присуствовати уколико родитељи посте у складу са календаром СПЦ.
               </li>
               <li className="pl-6 relative text-base text-[#4A3C2A] leading-relaxed border-b border-[#6B1A1A]/8 pb-3">
                 <span className="absolute left-0 top-2 text-[7px] text-[#C9A84C]">✦</span>
-                <strong className="text-[#6B1A1A]">Одрасле особе са озбиљним психичким проблемима, нарко-зависне особе, алкохоличари</strong> — могу долазити на молитву за здравље уколико посте по правилима СПЦ, узимају медицинску терапију и уз обавезну пратњу сродника, али не могу ноћивати у манастиру.
+                <strong className="text-[#6B1A1A]">Одрасле особе са озбиљним психичким проблемима, нарко-зависне особе, алкохоличари</strong> - могу долазити на молитву за здравље уколико посте по правилима СПЦ, узимају медицинску терапију и уз обавезну пратњу сродника, али не могу ноћивати у манастиру.
               </li>
               <li className="pl-6 relative text-base text-[#4A3C2A] leading-relaxed pb-3">
                 <span className="absolute left-0 top-2 text-[7px] text-[#C9A84C]">✦</span>
-                <strong className="text-[#6B1A1A]">Женске особе</strong> које на себи имају пудер, шминку или лаковане нокте — не примамо на молитву и не помазујемо.
+                <strong className="text-[#6B1A1A]">Женске особе</strong> које на себи имају пудер, шминку или лаковане нокте - не примамо на молитву и не помазујемо.
               </li>
             </ul>
           </div>
@@ -184,7 +184,7 @@ export default function Home() {
                 </li>
                 <li className="pl-6 relative text-base text-[#4A3C2A] leading-relaxed pb-3">
                   <span className="absolute left-0 top-2 text-[7px] text-[#C9A84C]">✦</span>
-                  Долазак најкасније до краја вечерње службе — <strong className="text-[#6B1A1A]">19:30 часова</strong>.
+                  Долазак најкасније до краја вечерње службе - <strong className="text-[#6B1A1A]">19:30 часова</strong>.
                 </li>
               </ul>
             </div>
