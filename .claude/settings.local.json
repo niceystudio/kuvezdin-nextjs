@@ -4,7 +4,8 @@
       "Read(//c/Users/Nicey/Documents/copy/**)",
       "Bash(python3 -c \":*)",
       "Bash(npx next:*)",
-      "Bash(ls c:/Users/Nicey/Documents/kuvezdin-nextjs/.env*)"
+      "Bash(ls c:/Users/Nicey/Documents/kuvezdin-nextjs/.env*)",
+      "Bash(node -e \"const p = require\\('./package.json'\\); console.log\\('next:', p.dependencies.next, '\\\\nreact:', p.dependencies.react\\)\")"
     ]
   }
 }

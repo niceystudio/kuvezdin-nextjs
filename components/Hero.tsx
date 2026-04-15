@@ -15,8 +15,7 @@ export default function Hero() {
             alt="Манастир Кувеждин, поглед на манастирски комплекс"
             title="Манастир Кувеждин на Фрушкој гори"
             fill
-            loading="eager"
-            priority
+            preload={true}
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#140404]/35 via-[#140404]/20 to-[#140404]/88" />
@@ -123,8 +122,7 @@ export default function Hero() {
             alt="Манастир Кувеждин, поглед на манастирски комплекс"
             title="Манастир Кувеждин на Фрушкој гори"
             fill
-            loading="eager"
-            priority
+            preload={true}
             className="object-cover"
           />
           <div className="absolute right-0 bottom-0 left-0 bg-gradient-to-t from-[#140404]/80 to-transparent px-6 py-5">

@@ -35,7 +35,7 @@ export default function SiteNav() {
                 title="Грб Српске православне цркве"
                 width={56}
                 height={56}
-                priority
+                fetchPriority="high"
                 className="h-10 w-auto object-contain sm:h-14"
               />
               <div className="border-l border-[#C9A84C]/30 py-1.5 pl-3 sm:py-2">
