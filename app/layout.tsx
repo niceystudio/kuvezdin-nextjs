@@ -16,7 +16,9 @@ export const metadata: Metadata = {
   title: "Manastir Kuveždin | Srpska pravoslavna crkva",
   description: "Informativna stranica manastira Kuveždin, Eparhije sremske, Srpske pravoslavne crkve.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/Грб_СПЦ.png",
+    shortcut: "/Грб_СПЦ.png",
+    apple: "/Грб_СПЦ.png",
   },
 };
 
