@@ -32,7 +32,7 @@ const sadrzaj = [
   },
   {
     type: "oznaka",
-    text: "Например:",
+    text: "На пример:",
   },
   {
     type: "istaknuto",
@@ -60,7 +60,7 @@ const sadrzaj = [
   },
   {
     type: "oznaka",
-    text: "Например:",
+    text: "На пример:",
   },
   {
     type: "istaknuto",
@@ -133,7 +133,7 @@ export default function PsaltirPage() {
 
       <main className="container mx-auto max-w-5xl px-6 py-16">
         <section className="border-b border-[#6B1A1A]/15 pb-16">
-          <blockquote className="mx-auto max-w-4xl border-y border-[#C9A84C]/40 py-8 text-center font-serif text-2xl leading-10 text-[#6B1A1A] italic md:text-[2rem] md:leading-[2.9rem]">
+          <blockquote className="mx-auto max-w-4xl py-8 text-center font-serif text-[1.35rem] leading-9 text-[#6B1A1A] md:text-[1.8rem] md:leading-[2.65rem]">
             {uvodniCitat.map((line) => (
               <p key={line}>{line}</p>
             ))}
@@ -156,10 +156,18 @@ export default function PsaltirPage() {
           <div className="space-y-5">
             {sadrzaj.map((item, index) => {
               if (item.type === "istaknuto") {
+                const highlightedBackground =
+                  item.text ===
+                    "Слава Оцу и Сину и Светоме Духу, и сада и увек и у векове векова. Амин. Алилуја, алилуја, алилуја слава Теби Боже (3x). Господе помилуј (3x)" ||
+                  item.text ===
+                    "Слава Оцу и Сину и Светоме Духу, и сада и увек и у векове векова. Амин.";
+
                 return (
                   <div
                     key={index}
-                    className="border border-[#6B1A1A]/10 bg-[#FBF7EE] px-6 py-5 font-serif text-xl leading-9 text-[#6B1A1A]"
+                    className={`border border-[#6B1A1A]/10 px-6 py-5 font-serif text-xl leading-9 text-[#6B1A1A] ${
+                      highlightedBackground ? "bg-[#F5EAD6]" : "bg-[#FBF7EE]"
+                    }`}
                   >
                     {item.text}
                   </div>
@@ -231,6 +239,24 @@ export default function PsaltirPage() {
       </main>
 
       <Footer />
+
+      <a
+        href="/preuzimanja/uputstvo-za-citanje-psaltira.pdf"
+        download
+        className="fixed bottom-6 left-6 z-50 inline-flex h-12 items-center gap-2 border border-[#C9A84C]/35 bg-[#2C0808]/95 px-3 text-[#F5EDD8] shadow-lg backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#451010] hover:shadow-xl md:h-auto md:gap-3 md:px-4 md:py-3"
+      >
+        <span className="flex h-8 w-8 items-center justify-center border border-[#C9A84C]/40 text-[11px] font-semibold tracking-[0.16em] text-[#C9A84C] md:h-9 md:w-9 md:text-xs">
+          PDF
+        </span>
+        <span className="text-left">
+          <span className="block text-[9px] font-semibold uppercase tracking-[0.16em] text-[#C9A84C] md:text-[10px] md:tracking-[0.18em]">
+            Preuzmi
+          </span>
+          <span className="hidden text-sm font-medium leading-tight md:block">
+            Uputstvo za psaltir
+          </span>
+        </span>
+      </a>
 
       <ScrollToTop />
     </div>
