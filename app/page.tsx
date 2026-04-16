@@ -1,7 +1,7 @@
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
-import CopyButton from "@/components/CopyButton";
+import DonationActions from "@/components/DonationActions";
 
 export const metadata = {
   title: "Manastir Kuveždin | Raspored bogosluženja, istorijat, galerija",
@@ -207,12 +207,12 @@ export default function Home() {
             <h2 className="text-4xl text-[#6B1A1A] font-serif">Добровољни прилози</h2>
           </div>
           <div className="bg-[#E8DCC8] border border-[#6B1A1A]/15 p-8 flex items-center justify-between gap-8 flex-wrap">
-            <div>
+            <div className="max-w-xl">
               <p className="text-base text-[#4A3C2A] mb-3">Ваше добровољне прилоге можете уплатити на следећи рачун:</p>
               <p className="text-2xl text-[#6B1A1A] font-semibold tracking-wide mb-2">205-507773-57</p>
               <p className="text-sm text-[#6B5C4C]">НЛБ Комерцијална банка</p>
             </div>
-            <CopyButton text="205-507773-57" />
+            <DonationActions accountNumber="205-507773-57" />
           </div>
         </section>
 

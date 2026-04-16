@@ -1,8 +1,6 @@
-﻿import Image from "next/image";
-import Link from "next/link";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
-import CopyButton from "@/components/CopyButton";
+import DonationActions from "@/components/DonationActions";
 import SiteNav from "@/components/SiteNav";
 import RussianOrthodoxCross from "@/components/RussianOrthodoxCross";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -133,7 +131,7 @@ export default async function ZaduzbinarstvoPage() {
             </h2>
           </div>
           <div className="flex flex-wrap items-center justify-between gap-8 border border-[#6B1A1A]/15 bg-[#E8DCC8] p-8">
-            <div>
+            <div className="max-w-xl">
               <p className="mb-3 text-base text-[#4A3C2A]">
                 Ваше добровољне прилоге можете уплатити на следећи рачун:
               </p>
@@ -142,7 +140,7 @@ export default async function ZaduzbinarstvoPage() {
               </p>
               <p className="text-sm text-[#6B5C4C]">НЛБ Комерцијална банка</p>
             </div>
-            <CopyButton text={accountNumber} />
+            <DonationActions accountNumber={accountNumber} />
           </div>
         </section>
       </main>
@@ -153,5 +151,3 @@ export default async function ZaduzbinarstvoPage() {
     </div>
   );
 }
-
-

@@ -5,8 +5,22 @@ import { useState } from "react";
 const COPY_LABEL = "\u041a\u043e\u043f\u0438\u0440\u0430\u0458 \u0431\u0440\u043e\u0458 \u0440\u0430\u0447\u0443\u043d\u0430";
 const COPIED_LABEL = "\u0423\u0441\u043f\u0435\u0448\u043d\u043e \u043a\u043e\u043f\u0438\u0440\u0430\u043d\u043e";
 
-export default function CopyButton({ text }: { text: string }) {
+type CopyButtonProps = {
+  text: string;
+  variant?: "primary" | "secondary";
+  className?: string;
+};
+
+export default function CopyButton({
+  text,
+  variant = "primary",
+  className,
+}: CopyButtonProps) {
   const [copied, setCopied] = useState(false);
+  const buttonClassName =
+    variant === "secondary"
+      ? "btn-secondary inline-flex items-center justify-center gap-2 whitespace-nowrap px-5 py-3 text-xs font-medium tracking-wider"
+      : "btn-primary inline-flex items-center justify-center gap-2 whitespace-nowrap px-5 py-3 text-xs font-medium tracking-wider";
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(text);
@@ -17,7 +31,7 @@ export default function CopyButton({ text }: { text: string }) {
   return (
     <button
       type="button"
-      className="inline-flex items-center gap-2 whitespace-nowrap bg-[#C9A84C] px-5 py-3 text-xs font-medium tracking-wider text-[#1A1209] uppercase transition-colors hover:bg-[#E8C96A]"
+      className={className ? `${buttonClassName} ${className}` : buttonClassName}
       onClick={handleCopy}
       disabled={copied}
     >
