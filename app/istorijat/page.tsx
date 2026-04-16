@@ -283,7 +283,7 @@ function renderParagraph(paragraph: Paragraph, key: string) {
     return (
       <blockquote
         key={key}
-        className="border-l-4 border-[#C9A84C] bg-[#FBF7EE] px-6 py-6 font-serif text-lg leading-8 text-[#4A3C2A] italic"
+        className="border-l-4 border-[#C9A84C] bg-[#FBF7EE] px-6 py-6 font-serif text-lg leading-8 text-[#4A3C2A]"
       >
         <div className="space-y-1">
           {paragraph.lines.map((line, index) => (
