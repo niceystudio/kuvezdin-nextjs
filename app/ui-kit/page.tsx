@@ -5,7 +5,18 @@ export const metadata = {
   alternates: {
     canonical: "/ui-kit",
   },
-  robots: { index: false, follow: false },
+  robots: {
+    index: false,
+    follow: false,
+    noarchive: true,
+    nosnippet: true,
+  },
+  googleBot: {
+    index: false,
+    follow: false,
+    noarchive: true,
+    nosnippet: true,
+  },
 };
 
 // ─── Token data ───────────────────────────────────────────────────────────────

@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Script from "next/script";
 import "./globals.css";
 import { Agentation } from "agentation";
 
@@ -32,6 +33,18 @@ export default function RootLayout({
       <body>
         {children}
         {process.env.NODE_ENV === "development" && <Agentation />}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-F9KQPZY3L3"
+          strategy="beforeInteractive"
+        />
+        <Script id="google-tag-init" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-F9KQPZY3L3');
+          `}
+        </Script>
       </body>
     </html>
   );
