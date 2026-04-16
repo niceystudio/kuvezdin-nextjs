@@ -6,7 +6,7 @@ import DonationActions from "@/components/DonationActions";
 export const metadata = {
   title: "Manastir Kuveždin | Raspored bogosluženja, istorijat, galerija",
   description:
-    "Manastir Kuveždin na Fruškoj gori: raspored bogosluženja, istorijat, galerija, duhovni sadržaji i mogućnosti za podršku obnovi manastira.",
+    "Saznajte kada su službe u manastiru Kuveždin, upoznajte njegovu istoriju, pogledajte fotografije i informišite se kako možete podržati obnovu.",
   alternates: {
     canonical: "/",
   },
