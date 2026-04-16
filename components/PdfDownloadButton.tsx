@@ -6,9 +6,15 @@ interface PdfDownloadButtonProps {
   href: string;
   label: string;
   title: string;
+  download?: boolean;
 }
 
-export default function PdfDownloadButton({ href, label, title }: PdfDownloadButtonProps) {
+export default function PdfDownloadButton({
+  href,
+  label,
+  title,
+  download = true,
+}: PdfDownloadButtonProps) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -20,7 +26,7 @@ export default function PdfDownloadButton({ href, label, title }: PdfDownloadBut
   return (
     <a
       href={href}
-      download
+      download={download ? true : undefined}
       aria-label={`Преузми PDF: ${title}`}
       className={`fixed bottom-6 left-6 z-50 inline-flex h-12 items-center gap-2 border border-[#C9A84C]/35 bg-[#2C0808]/95 px-3 text-[#F5EDD8] shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#451010] hover:shadow-xl md:h-auto md:gap-3 md:px-4 md:py-3 ${
         visible

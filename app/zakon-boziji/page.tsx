@@ -138,6 +138,9 @@ const contentScreens = Array.from({ length: 10 }, (_, index) => ({
   aspectClassName: "aspect-[3/4]",
 }));
 
+const bookDownloadUrl =
+  "https://drive.google.com/file/d/12wae6wNEgAWZ-Lclf5CSs3ZZbsDXHvbl/view?usp=sharing";
+
 export default async function ZakonBozijiPage() {
   const blocks = await getContentBlocks();
   const [titleBlock, ...restBlocks] = blocks;
@@ -270,7 +273,7 @@ export default async function ZakonBozijiPage() {
               </h2>
             </div>
             <a
-              href="/preuzimanja/zakon-boziji.pdf"
+              href={bookDownloadUrl}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center border border-[#6B1A1A] bg-[#6B1A1A] px-6 py-3 text-sm tracking-[0.18em] text-[#F5EDD8] uppercase transition-colors hover:bg-[#8C2424]"
@@ -284,9 +287,10 @@ export default async function ZakonBozijiPage() {
       <Footer />
 
       <PdfDownloadButton
-        href="/preuzimanja/zakon-boziji.pdf"
+        href={bookDownloadUrl}
         label="Преузми књигу"
         title="Закон Божији"
+        download={false}
       />
 
       <ScrollToTop />
