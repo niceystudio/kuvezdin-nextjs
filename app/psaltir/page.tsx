@@ -150,10 +150,8 @@ export default function PsaltirPage() {
               </span>
               <div className="h-px w-10 bg-current/50" />
             </div>
-            <div className="space-y-3 font-serif text-[1.3rem] leading-9 text-[#6B1A1A] md:text-[1.75rem] md:leading-[2.6rem]">
-              {uvodniCitat.map((line) => (
-              <p key={line}>{line}</p>
-              ))}
+            <div className="mx-auto max-w-[30ch] font-serif text-[1.3rem] leading-[2.35rem] text-[#6B1A1A] text-pretty md:max-w-[34ch] md:text-[1.75rem] md:leading-[3.1rem]">
+              <p>{uvodniCitat.join(" ")}</p>
             </div>
             <div className="mt-8 flex items-center justify-center gap-3">
               <div className="h-px w-8 bg-[#C9A84C]/40" />
