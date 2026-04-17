@@ -139,13 +139,29 @@ export default function PsaltirPage() {
 
       <main className="container mx-auto max-w-5xl px-6 py-16">
         <section className="border-b border-[#6B1A1A]/15 pb-16">
-          <blockquote className="mx-auto max-w-4xl py-8 text-center font-serif text-[1.35rem] leading-9 text-[#6B1A1A] md:text-[1.8rem] md:leading-[2.65rem]">
-            {uvodniCitat.map((line) => (
+          <blockquote className="mx-auto max-w-4xl border border-[#6B1A1A]/10 bg-[#FBF7EE] px-6 py-8 text-center md:px-10 md:py-10">
+            <div className="mb-6 flex items-center justify-center gap-3 text-[#C9A84C]">
+              <div className="h-px w-10 bg-current/50" />
+              <span
+                aria-hidden="true"
+                className="font-serif text-4xl leading-none text-[#C9A84C]/70"
+              >
+                "
+              </span>
+              <div className="h-px w-10 bg-current/50" />
+            </div>
+            <div className="space-y-3 font-serif text-[1.3rem] leading-9 text-[#6B1A1A] md:text-[1.75rem] md:leading-[2.6rem]">
+              {uvodniCitat.map((line) => (
               <p key={line}>{line}</p>
-            ))}
-            <p className="mt-6 text-sm tracking-[0.18em] text-[#8D6A2B] uppercase not-italic">
+              ))}
+            </div>
+            <div className="mt-8 flex items-center justify-center gap-3">
+              <div className="h-px w-8 bg-[#C9A84C]/40" />
+              <p className="text-sm tracking-[0.18em] text-[#8D6A2B] uppercase">
               свети Атанасије Велики
             </p>
+              <div className="h-px w-8 bg-[#C9A84C]/40" />
+            </div>
           </blockquote>
         </section>
 
