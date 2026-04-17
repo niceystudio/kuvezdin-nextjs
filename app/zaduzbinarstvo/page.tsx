@@ -130,8 +130,8 @@ export default async function ZaduzbinarstvoPage() {
               Добровољни прилози
             </h2>
           </div>
-          <div className="flex flex-wrap items-center justify-between gap-8 border border-[#6B1A1A]/15 bg-[#E8DCC8] p-8">
-            <div className="max-w-xl">
+          <div className="grid gap-8 border border-[#6B1A1A]/15 bg-[#E8DCC8] p-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
+            <div className="max-w-2xl">
               <p className="mb-3 text-base text-[#4A3C2A]">
                 Ваше добровољне прилоге можете уплатити на следећи рачун:
               </p>
@@ -140,7 +140,9 @@ export default async function ZaduzbinarstvoPage() {
               </p>
               <p className="text-sm text-[#6B5C4C]">НЛБ Комерцијална банка</p>
             </div>
-            <DonationActions accountNumber={accountNumber} />
+            <div className="lg:justify-self-end">
+              <DonationActions accountNumber={accountNumber} />
+            </div>
           </div>
         </section>
       </main>

@@ -6,6 +6,7 @@ import MitarstvaAccordion from "./MitarstvaAccordion";
 import ZoomableImage from "./ZoomableImage";
 import Footer from "@/components/Footer";
 import PdfDownloadButton from "@/components/PdfDownloadButton";
+import { ButtonAnchor } from "@/components/Button";
 
 export const metadata = {
   title: "O ispovesti | Manastir Kuveždin",
@@ -286,13 +287,14 @@ export default function IspovesPage() {
             <p className="text-xl text-[#F5EDD8] font-serif italic mb-6">
               Браћо и сестре исповедајте се код својих парохијских свештеника
             </p>
-            <a
+            <ButtonAnchor
               href="/preuzimanja/pomocnik-za-ispovest-mitarstva-blazene-teodore.pdf"
               download
-              className="inline-block px-8 py-3 bg-[#C9A84C] text-[#1A1209] text-xs tracking-[0.15em] uppercase hover:bg-[#E8C96A] transition-colors font-medium"
+              variant="primary"
+              className="px-8"
             >
               Преузми помоћник за исповест
-            </a>
+            </ButtonAnchor>
           </div>
         </section>
 

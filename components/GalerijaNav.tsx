@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { ButtonLink } from "@/components/Button";
 
 const navItems = [
   { href: "/", label: "Почетна" },
@@ -57,12 +58,13 @@ export default function GalerijaNav() {
                 </span>
               ))}
               <div className="h-3 w-px bg-[#C9A84C]/30" />
-              <Link
+              <ButtonLink
                 href="/zaduzbinarstvo"
-                className="ml-2 bg-[#C9A84C] px-5 py-2 text-xs font-medium tracking-wider text-[#1A1209] uppercase transition-colors hover:bg-[#E8C96A]"
+                variant="primary"
+                className="ml-2"
               >
                 Задужбинарство
-              </Link>
+              </ButtonLink>
             </div>
 
             {/* Mobile burger */}
@@ -144,13 +146,14 @@ export default function GalerijaNav() {
                 {item.label}
               </Link>
             ))}
-            <Link
+            <ButtonLink
               href="/zaduzbinarstvo"
               onClick={() => setOpen(false)}
-              className="mt-8 inline-block self-start bg-[#C9A84C] px-8 py-4 text-sm font-medium tracking-wider text-[#1A1209] uppercase transition-colors hover:bg-[#E8C96A]"
+              variant="primary"
+              className="mt-8 self-start"
             >
               Задужбинарство
-            </Link>
+            </ButtonLink>
           </nav>
         </div>
       )}

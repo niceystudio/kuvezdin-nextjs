@@ -1,4 +1,5 @@
 import RussianOrthodoxCross from "@/components/RussianOrthodoxCross";
+import Button from "@/components/Button";
 
 export const metadata = {
   title: "UI Kit | Kuvezdin Design System",
@@ -92,6 +93,48 @@ const buttons = [
     desc: "Секундарна акција поред примарне.",
     cssClass: "btn-secondary",
     text: "Историјат",
+  },
+];
+
+const buttonShowcase = [
+  {
+    label: "Без иконице",
+    note: "Основно заједничко дугме без иконице.",
+    preview: <Button variant="primary">Задужбинарство</Button>,
+  },
+  {
+    label: "Иконица лево",
+    note: "Иконица је поравната испред текста, и за примарни и за секундарни CTA.",
+    preview: (
+      <div className="flex flex-wrap items-stretch gap-3">
+        <Button variant="primary" icon={<QrDemoIcon />} className="w-[210px]">
+          Прикажи QR код
+        </Button>
+        <Button variant="secondary" icon={<CopyIcon />} className="w-[210px]">
+          Копирај број рачуна
+        </Button>
+      </div>
+    ),
+  },
+  {
+    label: "Иконица десно",
+    note: "Погодно за навигационе и акције наставка.",
+    preview: (
+      <Button variant="primary" icon={<ArrowRightIcon />} iconPosition="right">
+        Сазнај више
+      </Button>
+    ),
+  },
+  {
+    label: "Full-width мобилни CTA",
+    note: "На ужим екранима се шири целом доступном ширином.",
+    preview: (
+      <div className="w-full max-w-xs">
+        <Button variant="primary" fullWidth icon={<QrDemoIcon />}>
+          Прикажи QR код
+        </Button>
+      </div>
+    ),
   },
 ];
 
@@ -227,11 +270,33 @@ export default function UiKitPage() {
                   <p className="text-[11px] text-muted">{btn.desc}</p>
                 </div>
                 <div>
-                  <button className={btn.cssClass} type="button">
+                  <Button
+                    variant={
+                      btn.cssClass === "btn-secondary"
+                        ? "secondary"
+                        : btn.cssClass === "btn-primary-sm"
+                          ? "primary-sm"
+                          : "primary"
+                    }
+                  >
                     {btn.text}
-                  </button>
+                  </Button>
                 </div>
                 <p className="font-mono text-[10px] text-muted break-all">.{btn.cssClass}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            {buttonShowcase.map((example) => (
+              <div key={example.label} className="card flex flex-col gap-4">
+                <div>
+                  <p className="text-xs font-medium text-body mb-1">{example.label}</p>
+                  <p className="text-[11px] text-muted">{example.note}</p>
+                </div>
+                <div className="flex min-h-16 items-center">
+                  {example.preview}
+                </div>
               </div>
             ))}
           </div>
@@ -351,7 +416,7 @@ export default function UiKitPage() {
           <SectionHeading number="VII" title="Иконе и SVG" />
 
           <div className="card p-8">
-            <p className="eyebrow-muted mb-6">RussianOrthodoxCross - <span className="font-mono">size</span> проп</p>
+            <p className="eyebrow-muted mb-6">RussianOrthodoxCross - <span className="font-mono">size</span> својство</p>
             <div className="flex items-end gap-8 flex-wrap">
               {[16, 20, 24, 32, 48].map((size) => (
                 <div key={size} className="flex flex-col items-center gap-2">
@@ -363,7 +428,7 @@ export default function UiKitPage() {
 
             <hr className="border-t border-gold/20 my-8" />
 
-            <p className="eyebrow-muted mb-6">UI иконе (inline SVG)</p>
+            <p className="eyebrow-muted mb-6">UI иконе (уграђени SVG)</p>
             <div className="flex items-center gap-8 flex-wrap">
               {[
                 { name: "Затвори",      svg: <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M15 5L5 15M5 5l10 10" /></svg> },
@@ -411,7 +476,9 @@ export default function UiKitPage() {
                       </span>
                     ))}
                     <div className="h-3 w-px bg-gold/30" />
-                    <span className="btn-primary-sm ml-2">Задужбинарство</span>
+                    <Button variant="primary-sm" className="ml-2">
+                      Задужбинарство
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -483,4 +550,59 @@ function SectionHeading({ number, title }: { number: string; title: string }) {
 
 function Divider() {
   return <hr className="border-t border-primary/10" />;
+}
+
+function CopyIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <rect
+        x="4"
+        y="4"
+        width="8"
+        height="8"
+        rx="1"
+        stroke="currentColor"
+        strokeWidth="1"
+      />
+      <path
+        d="M2 10V2H10"
+        stroke="currentColor"
+        strokeWidth="1"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function ArrowRightIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <path
+        d="M3 7H11"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M8 4L11 7L8 10"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function QrDemoIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 122.88 122.7" fill="none">
+      <path
+        d="M0.18 0H44.81V44.45H0.18V0ZM111.5 111.5H122.88V122.7H111.5V111.5ZM89.63 111.48H101.01V122.15H89.63H89.62H78.25V100.33H89.27V89.27H100.48V67.22H111.86V78.06H122.7V89.26H111.86V100.46H100.65H100.48H89.63V111.48ZM55.84 89.09H66.86V77.89H56.2V66.69H66.86V55.49H56.02V66.69H44.63V55.49H55.83V22.23H67.21V55.48H78.23V66.68H89.07V55.48H100.45V66.68H89.63V77.88H78.25V99.93H67.22V122.16H55.84V89.09ZM111.31 55.48H122.69V66.68H111.31V55.48ZM22.41 55.48H33.79V66.68H22.41V55.48ZM0.18 55.48H11.56V66.68H0.18V55.48ZM55.84 0H67.22V11.2H55.84V0ZM0 78.06H44.63V122.51H0V78.06ZM10.84 88.86H33.79V111.72H10.84V88.86ZM78.06 0H122.69V44.45H78.06V0ZM88.91 10.8H111.86V33.66H88.91V10.8ZM11.02 10.8H33.97V33.66H11.02V10.8Z"
+        fill="currentColor"
+        fillRule="evenodd"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
 }

@@ -206,13 +206,15 @@ export default function Home() {
             <span className="text-5xl text-[#C9A84C]/50 font-serif leading-none">V</span>
             <h2 className="text-4xl text-[#6B1A1A] font-serif">Добровољни прилози</h2>
           </div>
-          <div className="bg-[#E8DCC8] border border-[#6B1A1A]/15 p-8 flex items-center justify-between gap-8 flex-wrap">
-            <div className="max-w-xl">
+          <div className="grid gap-8 border border-[#6B1A1A]/15 bg-[#E8DCC8] p-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
+            <div className="max-w-2xl">
               <p className="text-base text-[#4A3C2A] mb-3">Ваше добровољне прилоге можете уплатити на следећи рачун:</p>
               <p className="text-2xl text-[#6B1A1A] font-semibold tracking-wide mb-2">205-507773-57</p>
               <p className="text-sm text-[#6B5C4C]">НЛБ Комерцијална банка</p>
             </div>
-            <DonationActions accountNumber="205-507773-57" />
+            <div className="lg:justify-self-end">
+              <DonationActions accountNumber="205-507773-57" />
+            </div>
           </div>
         </section>
 

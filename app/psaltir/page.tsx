@@ -5,6 +5,7 @@ import RussianOrthodoxCross from "@/components/RussianOrthodoxCross";
 import ScrollToTop from "@/components/ScrollToTop";
 import Footer from "@/components/Footer";
 import PdfDownloadButton from "@/components/PdfDownloadButton";
+import { ButtonAnchor } from "@/components/Button";
 
 export const metadata = {
   title: "O Psaltiru | Manastir Kuveždin",
@@ -232,13 +233,14 @@ export default function PsaltirPage() {
             <p className="mb-6 font-serif text-xl text-[#F5EDD8] italic">
               Упутство за читање псалтира доступно је и у PDF формату.
             </p>
-            <a
+            <ButtonAnchor
               href="/preuzimanja/uputstvo-za-citanje-psaltira.pdf"
               download
-              className="inline-block bg-[#C9A84C] px-8 py-3 text-xs font-medium tracking-[0.15em] text-[#1A1209] uppercase transition-colors hover:bg-[#E8C96A]"
+              variant="primary"
+              className="px-8"
             >
               Преузми PDF
-            </a>
+            </ButtonAnchor>
           </div>
         </section>
       </main>

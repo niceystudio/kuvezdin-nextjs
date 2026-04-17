@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { ButtonLink } from "@/components/Button";
 
 const navItems = [
   { href: "/", label: "Почетна" },
@@ -68,12 +68,13 @@ export default function SiteNav() {
                 );
               })}
               <div className="h-3 w-px bg-[#C9A84C]/30" />
-              <Link
+              <ButtonLink
                 href="/zaduzbinarstvo"
-                className="ml-2 bg-[#C9A84C] px-5 py-2 text-xs font-medium tracking-wider text-[#1A1209] uppercase transition-colors hover:bg-[#E8C96A]"
+                variant="primary"
+                className="ml-2"
               >
                 Задужбинарство
-              </Link>
+              </ButtonLink>
             </div>
 
             {/* Mobile burger */}
@@ -129,13 +130,15 @@ export default function SiteNav() {
                   </a>
                 );
               })}
-              <a
+              <ButtonLink
                 href="/zaduzbinarstvo"
-                className="mt-4 block bg-[#C9A84C] px-4 py-3 text-center text-sm font-medium tracking-wider text-[#1A1209] uppercase transition-colors hover:bg-[#E8C96A]"
+                variant="primary"
+                fullWidth
+                className="mt-4"
                 onClick={() => setOpen(false)}
               >
                 Задужбинарство
-              </a>
+              </ButtonLink>
             </nav>
           </div>
         </>
