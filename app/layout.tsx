@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Script from "next/script";
 import "./globals.css";
 import { Agentation } from "agentation";
 
@@ -29,6 +30,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="sr" className={monahOCS.variable}>
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-F9KQPZY3L3"
+          strategy="beforeInteractive"
+        />
+        <Script id="google-analytics" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-F9KQPZY3L3');
+          `}
+        </Script>
+      </head>
       <body>
         {children}
         {process.env.NODE_ENV === "development" && <Agentation />}
